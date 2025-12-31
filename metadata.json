@@ -1,0 +1,7 @@
+{
+  "name": "Spiced Roots Oxford",
+  "description": "A sophisticated, Caribbean-inspired restaurant website featuring elegant design, online ordering, and table reservations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
