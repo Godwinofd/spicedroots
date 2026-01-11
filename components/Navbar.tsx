@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${isScrolled && !isMobileMenuOpen
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out ${isScrolled && !isMobileMenuOpen
         ? 'bg-[#F9F8F6]/95 backdrop-blur-xl h-20 border-b border-[#27618E]/10'
         : 'bg-transparent h-28'
         }`}
@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       </div>
 
       {/* Mobile Full Screen Menu */}
-      <div className={`fixed inset-0 bg-[#F5F5F0] z-[105] transition-all duration-700 ease-[cubic-bezier(0.16, 1, 0.3, 1)] ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+      <div className={`fixed inset-0 bg-[#F5F5F0] z-[105] transition-all duration-400 ease-[cubic-bezier(0.16, 1, 0.3, 1)] ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         }`}>
         <div className="h-full flex flex-col justify-center items-center px-10 space-y-12">
           <div className="text-center space-y-2 mb-8">
@@ -142,7 +142,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => { e.preventDefault(); handleLinkClick(link.id); }}
-                className={`text-3xl sm:text-4xl serif italic transition-all duration-500 hover:text-[#D1BB94] ${currentPage === link.id ? 'text-[#D1BB94] translate-x-4' : 'text-[#27618E]'
+                className={`text-6xl sm:text-7xl font-just-another-hand uppercase transition-all duration-300 hover:text-[#D1BB94] ${currentPage === link.id ? 'text-[#D1BB94] translate-x-4' : 'text-[#27618E]'
                   }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
