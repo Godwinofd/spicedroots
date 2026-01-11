@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Palette, Wine, Mic2, Music, ArrowLeft, Calendar, Clock, MapPin, Users } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
+import sipAndPaintImg from '../assets/sipandpaint.jpg';
+import dancehallImg from '../assets/dancehall.jpg';
+import bachataImg from '../assets/bachata.jpg';
 
 interface EventData {
     id: string;
@@ -29,7 +32,7 @@ const EVENTS_DATA: EventData[] = [
             'Enjoy Caribbean snacks and music while you paint.',
             'Take your masterpiece home at the end of the night.'
         ],
-        image: '../assets/sipandpaint.jpg',
+        image: sipAndPaintImg,
         price: '£35 per person',
         duration: '2.5 Hours',
         nextDate: 'Every Thursday',
@@ -65,7 +68,7 @@ const EVENTS_DATA: EventData[] = [
             'Special cocktail offers throughout the night.',
             'Maximum vibes and community spirit.'
         ],
-        image: '../assets/dancehall.jpg',
+        image: dancehallImg,
         price: 'Free Entry / Table Booking Advised',
         duration: 'All Night',
         nextDate: 'Every Saturday Night',
@@ -83,7 +86,7 @@ const EVENTS_DATA: EventData[] = [
             'Latin-fusion cocktails available all night.',
             'A high-energy party atmosphere like no other.'
         ],
-        image: '../assets/bachata.jpg',
+        image: bachataImg,
         price: '£10 Entry (incl. Welcome Drink)',
         duration: '4 Hours',
         nextDate: 'Bi-Weekly Sundays',
@@ -209,10 +212,11 @@ const Events: React.FC = () => {
                             className="group cursor-pointer bg-white rounded-[4rem] overflow-hidden border border-[#27618E]/5 shadow-sm hover:shadow-2xl transition-all duration-700 flex flex-col"
                         >
                             <div className="h-[400px] overflow-hidden relative">
-                                <img
+                                <OptimizedImage
                                     src={event.image}
                                     alt={event.title}
                                     className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#27618E]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
                                     <span className="px-10 py-4 bg-white text-[#27618E] rounded-full text-3xl font-just-another-hand tracking-widest uppercase">View Details</span>
@@ -236,14 +240,14 @@ const Events: React.FC = () => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="mt-40 text-center space-y-12 p-20 bg-[#27618E] rounded-[4rem] text-white">
-                    <h2 className="text-7xl font-just-another-hand italic">Looking for a private venue?</h2>
-                    <p className="text-3xl font-just-another-hand opacity-70 max-w-2xl mx-auto">
+                <div className="mt-20 lg:mt-40 text-center space-y-8 lg:space-y-12 p-8 lg:p-20 bg-[#27618E] rounded-[3rem] text-white">
+                    <h2 className="text-5xl lg:text-7xl font-just-another-hand italic">Looking for a private venue?</h2>
+                    <p className="text-xl lg:text-3xl font-just-another-hand opacity-70 max-w-2xl mx-auto">
                         Host your own celebration at Spiced Roots. From intimate dinners to massive parties, we bring the Caribbean to you.
                     </p>
                     <button
                         onClick={() => window.location.hash = 'contact'}
-                        className="px-16 py-6 bg-[#D1BB94] text-white rounded-full text-4xl font-just-another-hand tracking-widest uppercase hover:bg-white hover:text-[#27618E] transition-all"
+                        className="px-8 py-4 lg:px-16 lg:py-6 bg-[#D1BB94] text-white rounded-full text-2xl lg:text-4xl font-just-another-hand tracking-widest uppercase hover:bg-white hover:text-[#27618E] transition-all"
                     >
                         Private Hire Enquiries
                     </button>
