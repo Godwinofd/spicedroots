@@ -140,7 +140,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
             {/* Left Column: Typography & Text */}
-            <div className="space-y-10 relative z-10">
+            <div className="space-y-10 relative z-10 order-2 lg:order-1">
 
               {/* Header Tag */}
               <div className="flex items-center space-x-4 animate-reveal-up" style={{ animationDelay: '0.1s' }}>
@@ -192,7 +192,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
 
             {/* Right Column: Imagery - Refined Layout */}
-            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
+            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0 order-1 lg:order-2">
 
               {/* Main Image (Food) - Cleaner Lines */}
               <div className="relative z-10 w-[85%] max-w-md transform -translate-x-4 sm:-translate-x-8 -translate-y-8">
