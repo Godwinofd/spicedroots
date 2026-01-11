@@ -49,7 +49,16 @@ const MenuPage: React.FC = () => {
       </div>
 
       {/* Creative "Bloom" Image Effect - Floating Circular Preview */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-10 w-32 h-32 opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 transition-all duration-700 pointer-events-none z-0">
+      {/* Mobile: Static Image displayed Above Text */}
+      {item.image && (
+        <div className="md:hidden w-full h-48 mb-6 rounded-2xl overflow-hidden shadow-lg relative">
+          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 border border-white/10 rounded-2xl"></div>
+        </div>
+      )}
+
+      {/* Desktop: Creative "Bloom" Image Effect - Floating Circular Preview */}
+      <div className="hidden md:block absolute top-1/2 -translate-y-1/2 right-10 w-32 h-32 opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 transition-all duration-700 pointer-events-none z-0">
         <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl rotate-12 group-hover:rotate-0 transition-transform duration-700">
           {item.image && (
             <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
@@ -174,7 +183,7 @@ const MenuPage: React.FC = () => {
         .animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; }
         .animate-spin-slow { animation: spin-slow 12s linear infinite; }
       `}</style>
-    </div>
+    </div >
   );
 };
 
