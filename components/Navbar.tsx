@@ -136,13 +136,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <h3 className="serif italic text-4xl text-[#27618E]">Menu & Dining</h3>
           </div>
 
-          <nav className="flex flex-col items-center space-y-8 w-full">
+          <nav className="flex flex-col items-center space-y-5 w-full">
             {navLinks.map((link, idx) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => { e.preventDefault(); handleLinkClick(link.id); }}
-                className={`text-6xl sm:text-7xl font-just-another-hand uppercase transition-all duration-300 hover:text-[#D1BB94] ${currentPage === link.id ? 'text-[#D1BB94] translate-x-4' : 'text-[#27618E]'
+                className={`text-5xl sm:text-6xl font-just-another-hand uppercase transition-all duration-300 hover:text-[#D1BB94] ${currentPage === link.id ? 'text-[#D1BB94] translate-x-4' : 'text-[#27618E]'
                   }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
