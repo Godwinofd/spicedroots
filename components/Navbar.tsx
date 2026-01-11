@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${isScrolled && !isMobileMenuOpen
         ? 'bg-[#F9F8F6]/95 backdrop-blur-xl h-20 border-b border-[#27618E]/10'
         : 'bg-transparent h-28'
         }`}

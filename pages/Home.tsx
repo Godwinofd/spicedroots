@@ -71,28 +71,21 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             loop
             playsInline
             preload="metadata"
-            poster={backgroundImage3}
             className="w-full h-full object-cover brightness-[0.25]"
             style={{ willChange: 'transform' }}
           >
             <source src={heroVideo} type="video/mp4" />
-            {/* Fallback image for browsers that don't support video */}
-            <img
-              src={backgroundImage3}
-              alt="Spiced Roots Caribbean Restaurant ambiance"
-              className="w-full h-full object-cover brightness-[0.25]"
-            />
           </video>
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
 
-          <h1 className="text-[18vw] sm:text-[15vw] leading-[0.7] font-just-another-hand uppercase text-white font-normal tracking-tight mb-8 drop-shadow-2xl animate-reveal-up opacity-0 fill-mode-forwards" style={{ animationDelay: '0.4s' }}>
+          <h1 className="text-[18vw] sm:text-[15vw] leading-[0.9] sm:leading-[0.7] font-just-another-hand uppercase text-white font-normal tracking-tight mb-8 drop-shadow-2xl animate-reveal-up opacity-0 fill-mode-forwards" style={{ animationDelay: '0.4s' }}>
             SPICED ROOTS
           </h1>
 
           <div className="flex flex-col items-center animate-reveal-up opacity-0 fill-mode-forwards" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center justify-center space-x-3 text-white/70 text-[10px] sm:text-xs tracking-[0.3em] font-bold uppercase mb-12 max-w-2xl">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-white/70 text-[10px] sm:text-xs tracking-[0.3em] font-bold uppercase mb-12 max-w-2xl px-4">
               <span>Fine Caribbean Cuisine</span>
               <Star className="w-2 h-2 text-[#D1BB94] fill-[#D1BB94]" />
               <span>Rum Bar</span>
