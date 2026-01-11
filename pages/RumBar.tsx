@@ -111,7 +111,7 @@ const RumBar: React.FC = () => {
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-white/[0.02] transform skew-x-12"></div>
 
                 <div className="max-w-[1400px] mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div className="space-y-12 relative z-10">
+                    <div className="space-y-12 relative z-10 order-2 lg:order-1">
                         <div className="flex items-center space-x-4">
                             <div className="h-[1px] w-12 bg-[#D1BB94]"></div>
                             <span className="text-[#D1BB94] text-xl tracking-[0.6em] uppercase font-just-another-hand">Experience</span>
@@ -143,20 +143,20 @@ const RumBar: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="relative z-10">
+                    <div className="relative z-10 order-1 lg:order-2">
                         <div className="aspect-square relative flex items-center justify-center">
                             <div className="absolute inset-0 border border-white/10 rounded-full animate-spin-slow"></div>
                             <div className="absolute inset-8 border border-[#D1BB94]/20 rounded-full animate-spin-slow-reverse"></div>
+                            <div className="w-[85%] h-[85%] rounded-full overflow-hidden shadow-2xl border-8 border-white/10 rotate-[5deg] hover:rotate-0 transition-transform duration-1000">
+                                <img
+                                    src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Mixology Ritual"
+                                    className="w-full h-full object-cover"
+                                />
 
-                            <img
-                                src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2070&auto=format&fit=crop"
-                                alt="Mixology Ritual"
-                                className="w-full h-full object-cover"
-                            />
-
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
 
             <style>{`
