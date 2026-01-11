@@ -18,4 +18,4 @@ export interface Review {
   title: string;
 }
 
-export type Page = 'home' | 'menu' | 'order' | 'reservations' | 'about' | 'contact';
+export type Page = 'home' | 'menu' | 'order' | 'reservations' | 'about' | 'contact' | 'rum-bar' | 'catering' | 'events' | 'not-found';

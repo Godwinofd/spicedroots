@@ -1,8 +1,12 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Page } from '../types';
 import { REVIEWS } from '../constants';
 import { Star, ArrowRight, ShoppingBag, Calendar, ChevronLeft, ChevronRight, Utensils } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
+import backgroundImage from '../assets/new.jpg';
+import backgroundImage2 from '../assets/background2.jpg';
+import backgroundImage3 from '../assets/background3.jpg';
+import heroVideo from '../assets/rumbar-1.mp4';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
@@ -66,9 +70,18 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             muted
             loop
             playsInline
+            preload="metadata"
+            poster={backgroundImage3}
             className="w-full h-full object-cover brightness-[0.25]"
+            style={{ willChange: 'transform' }}
           >
-            <source src="/assets/rumbar-1.mp4" type="video/mp4" />
+            <source src={heroVideo} type="video/mp4" />
+            {/* Fallback image for browsers that don't support video */}
+            <img
+              src={backgroundImage3}
+              alt="Spiced Roots Caribbean Restaurant ambiance"
+              className="w-full h-full object-cover brightness-[0.25]"
+            />
           </video>
         </div>
 
@@ -87,16 +100,17 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <span>Oxford</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 flex-wrap">
               <button
                 onClick={() => onNavigate('reservations')}
-                className="px-12 py-5 bg-[#D1BB94] hover:bg-[#27618E] text-white rounded-full text-[10px] tracking-[0.3em] font-black transition-all duration-500 btn-hover-scale shadow-xl uppercase shadow-[#D1BB94]/10"
+                className="group flex items-center space-x-4 px-8 py-5 border border-white/20 hover:border-white/60 rounded-full text-[10px] tracking-[0.3em] font-black text-white transition-all duration-500 uppercase backdrop-blur-md btn-hover-scale"
               >
-                BOOK A TABLE
+                <span>BOOK A TABLE</span>
+                <Calendar className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
               </button>
               <button
                 onClick={() => onNavigate('menu')}
-                className="group flex items-center space-x-4 px-10 py-5 border border-white/20 hover:border-white/60 rounded-full text-[10px] tracking-[0.3em] font-black text-white transition-all duration-500 uppercase backdrop-blur-md btn-hover-scale"
+                className="group flex items-center space-x-4 px-8 py-5 border border-white/20 hover:border-white/60 rounded-full text-[10px] tracking-[0.3em] font-black text-white transition-all duration-500 uppercase backdrop-blur-md btn-hover-scale"
               >
                 <span>EXPLORE MENU</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -112,84 +126,121 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Optimized About Us Sector */}
-      <section ref={aboutRef} className="relative py-40 px-6 sm:px-12 bg-[#F9F8F6] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+      {/* Decorative Ticker Banner */}
+      <div className="bg-[#fcfaf7] py-4 overflow-hidden whitespace-nowrap z-20 relative">
+        <div className="flex space-x-12 animate-scroll-fast text-[#27618E] text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase items-center">
+          {[...Array(10)].map((_, i) => (
+            <React.Fragment key={i}>
+              <span className="flex items-center">✦ <span className="ml-8">Cowley Road's Finest</span></span>
+              <span className="flex items-center">✦ <span className="ml-8">Modern Caribbean Cuisine</span></span>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
 
-          {/* Content side */}
-          <div className="lg:col-span-5 space-y-12">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <span className="w-12 h-[1px] bg-[#D1BB94]"></span>
-                <span className="text-[#D1BB94] text-[10px] tracking-[0.4em] font-black uppercase">THE HERITAGE</span>
+      {/* Optimized About Us Sector - Enhanced Design V2 */}
+      <section ref={aboutRef} className="relative py-24 lg:py-40 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        {/* Overlay for readability - adjusted opacity */}
+        <div className="absolute inset-0 bg-[#F9F8F6]/90 z-0"></div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            {/* Left Column: Typography & Text */}
+            <div className="space-y-10 relative z-10">
+
+              {/* Header Tag */}
+              <div className="flex items-center space-x-4 animate-reveal-up" style={{ animationDelay: '0.1s' }}>
+                <div className="h-[2px] w-12 bg-[#D1BB94]"></div>
+                <span className="text-[#D1BB94] font-medium tracking-[0.2em] text-sm uppercase">The Heritage</span>
               </div>
-              <h2 className="text-8xl sm:text-9xl font-just-another-hand uppercase font-normal leading-none tracking-tight text-[#27618E]">
-                VIBRANT<br />SOUL, <span className="text-[#D1BB94]">ROOTED</span><br />IN TRADITION
+
+              {/* Main Headline */}
+              <h2 className="leading-[0.9] animate-reveal-up" style={{ animationDelay: '0.2s' }}>
+                <div className="block font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem]">
+                  VIBRANT
+                </div>
+                <div className="block -mt-4 sm:-mt-8">
+                  <span className="font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem]">SOUL, </span>
+                  <span className="font-serif italic font-bold text-[#D1BB94] text-[12vw] sm:text-[7rem] ml-2">ROOTED</span>
+                </div>
+                <div className="block font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem] -mt-4 sm:-mt-8">
+                  IN TRADITION
+                </div>
               </h2>
-            </div>
 
-            <div className="space-y-8">
-              <p className="text-xl text-[#27618E]/80 leading-relaxed font-light italic serif">
+              {/* Quote */}
+              <blockquote className="text-[#27618E]/90 font-serif italic text-xl sm:text-2xl leading-relaxed border-l-0 pl-0 mt-8 animate-reveal-up" style={{ animationDelay: '0.3s' }}>
                 "We don't just cook food; we share the stories of our grandmothers, the rhythm of our islands, and the warmth of Caribbean hospitality."
-              </p>
-              <p className="text-base text-[#27618E]/60 leading-loose font-light max-w-md">
-                Founded with a mission to elevate Caribbean cuisine in Oxford, Spiced Roots blends traditional jerk-pit methods with contemporary techniques. Every spice is toasted by hand, every curry slow-cooked for hours, and every cocktail crafted with the finest aged rums.
-              </p>
+              </blockquote>
+
+              {/* Body Text */}
+              <div className="text-[#27618E]/70 font-light text-base sm:text-lg leading-relaxed space-y-6 max-w-lg animate-reveal-up" style={{ animationDelay: '0.4s' }}>
+                <p>
+                  Founded with a mission to elevate Caribbean cuisine in Oxford, Spiced Roots blends traditional jerk-pit methods with contemporary techniques.
+                </p>
+                <p>
+                  Every spice is toasted by hand, every curry slow-cooked for hours, and every cocktail crafted with the finest aged rums.
+                </p>
+              </div>
+
+              {/* CTA */}
+              <button
+                onClick={() => onNavigate('about')}
+                className="group flex items-center space-x-4 pt-4 animate-reveal-up"
+                style={{ animationDelay: '0.5s' }}
+              >
+                <span className="text-[#27618E] font-bold tracking-[0.2em] text-sm uppercase group-hover:text-[#D1BB94] transition-colors">Our Story</span>
+                <div className="w-12 h-12 rounded-full border border-[#27618E]/20 flex items-center justify-center group-hover:border-[#D1BB94] group-hover:bg-[#D1BB94] group-hover:text-white text-[#27618E] transition-all duration-300">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </button>
+
             </div>
 
-            <button
-              onClick={() => onNavigate('about')}
-              className="group relative flex items-center space-x-6 py-4 overflow-hidden"
-            >
-              <span className="text-[10px] tracking-[0.4em] font-black uppercase text-[#27618E] group-hover:text-[#D1BB94] transition-colors">OUR STORY</span>
-              <div className="w-12 h-12 rounded-full border border-[#27618E]/20 flex items-center justify-center group-hover:border-[#D1BB94] group-hover:bg-[#D1BB94] group-hover:text-white transition-all duration-500">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </button>
-          </div>
+            {/* Right Column: Imagery - Refined Layout */}
+            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
 
-          {/* Visual side - Editorial Layout */}
-          <div className="lg:col-span-7 relative">
-            <div className="grid grid-cols-12 grid-rows-6 h-[700px] gap-4">
-              {/* Main Image */}
-              <div className="col-start-1 col-end-10 row-start-1 row-end-6 rounded-2xl overflow-hidden shadow-2xl relative group">
-                <img
-                  src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200"
-                  alt="Kitchen craftsmanship"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-dark-green/20 group-hover:bg-transparent transition-colors duration-700"></div>
+              {/* Main Image (Food) - Cleaner Lines */}
+              <div className="relative z-10 w-[85%] max-w-md transform -translate-x-4 sm:-translate-x-8 -translate-y-8">
+                <div className="overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700">
+                  <OptimizedImage
+                    src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1935&auto=format&fit=crop"
+                    alt="Authentic Caribbean Jerk Ribs with traditional spices"
+                    aspectRatio="aspect-[4/5]"
+                    className="hover:scale-105 transition-transform duration-1000"
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 400px"
+                  />
+                </div>
               </div>
 
-              {/* Floating Accent Image */}
-              <div className="col-start-8 col-end-13 row-start-3 row-end-7 rounded-2xl overflow-hidden shadow-2xl z-10 border-[10px] border-dark-green translate-y-8 animate-float">
-                <img
-                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
-                  alt="Interior details"
-                  className="w-full h-full object-cover"
-                />
+              {/* Secondary Image (Interior) - White Border for Separation */}
+              <div className="absolute bottom-12 right-0 sm:right-8 w-[55%] max-w-xs z-20 transform translate-y-12">
+                <div className="p-0 bg-white rounded-xl shadow-2xl rotate-[3deg] hover:rotate-0 transition-transform duration-700 border-[8px] border-white">
+                  <OptimizedImage
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                    alt="Spiced Roots restaurant interior with Caribbean ambiance"
+                    aspectRatio="aspect-square"
+                    className="rounded-lg"
+                    sizes="(max-width: 768px) 55vw, 300px"
+                  />
+                </div>
               </div>
 
-              {/* Decorative Coordinates Badge */}
-              <div className="absolute -left-12 bottom-12 bg-accent-pink p-6 rounded-full rotate-[-15deg] hidden lg:flex flex-col items-center justify-center text-dark-green shadow-xl z-20 hover:rotate-0 transition-transform duration-500 cursor-default">
-                <span className="text-[10px] font-black tracking-widest leading-none">51.7483° N</span>
-                <span className="text-[10px] font-black tracking-widest leading-none">1.2366° W</span>
-              </div>
+
             </div>
 
-            {/* Background Texture */}
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-accent-pink/5 rounded-full blur-[120px] pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* Decorative Ticker */}
-      <div className="bg-accent-pink py-5 overflow-hidden whitespace-nowrap border-y border-dark-green/10">
-        <div className="flex space-x-20 animate-scroll-fast text-dark-green text-[11px] font-black tracking-[0.5em] uppercase items-center">
+      <div className="bg-[#27618E] py-5 overflow-hidden whitespace-nowrap border-y border-[#27618E]/10">
+        <div className="flex space-x-20 animate-scroll-fast text-white text-[11px] font-black tracking-[0.5em] uppercase items-center">
           {[...Array(20)].map((_, i) => (
             <React.Fragment key={i}>
-              <span className="flex items-center">✦ <span className="ml-8">Cowley Road's Culinary Landmark</span></span>
-              <span className="flex items-center">✦ <span className="ml-8">Modern Caribbean Gastronomy</span></span>
+              <span className="flex items-center">✦ <span className="ml-8">Life Events & more</span></span>
+              <span className="flex items-center">✦ <span className="ml-8">Sip & Paint</span></span>
             </React.Fragment>
           ))}
         </div>
@@ -199,7 +250,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <section className="flex flex-col lg:flex-row h-auto lg:h-[90vh]">
         <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-full group overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766709704/pexels-8pcarlos-morocho-2150734957-35260748_yoeh8n.jpg"
+            src={backgroundImage3}
             alt="Authentic Caribbean dish"
             className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
           />
@@ -211,10 +262,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 bg-accent-pink p-12 lg:p-24 flex flex-col justify-center items-center text-center text-dark-green">
+        <div className="w-full lg:w-1/2 bg-[#F9F8F6] p-12 lg:p-24 flex flex-col justify-center items-center text-center text-dark-green">
           <span className="text-4xl mb-6">✦</span>
           <h2 className="text-8xl sm:text-[11rem] font-just-another-hand uppercase font-normal leading-none tracking-tight mb-8">
-            CURATED<br />FLAVOURS
+            OUR<br />FLAVOURS
           </h2>
           <p className="text-lg leading-relaxed mb-12 max-w-md font-medium text-dark-green/70">
             From the deep smokiness of our 14-hour jerk pit to the delicate balance of our tamarind glazes, every dish is an invitation to celebrate.
@@ -228,223 +279,196 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Redesigned Dine With Us Section - Less Formal, More Vibrant */}
-      <section ref={diningRef} className="bg-[#27618E] py-32 lg:py-56 px-6 sm:px-12 relative overflow-hidden">
-        {/* Organic Decorative Elements */}
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#D1BB94]/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#F9F8F6]/5 rounded-full blur-[150px] pointer-events-none"></div>
+      {/* Redesigned Dine With Us Section - Inspired by Reference */}
+      <section ref={diningRef} className="bg-[#fcfaf7] py-20 lg:py-32 px-6 sm:px-12 relative overflow-hidden">
 
         <div className="max-w-[1400px] mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row gap-24 items-start">
 
-            {/* Left Column: Narrative with Staggered Elements */}
-            <div className="w-full lg:w-[45%] space-y-20">
-              <div className="space-y-8">
-                <div className="flex items-center space-x-6">
-                  <span className="font-just-another-hand text-3xl text-[#D1BB94] tracking-wider transform -rotate-12">The Experience</span>
-                  <div className="h-[1px] flex-grow bg-[#F9F8F6]/20"></div>
-                </div>
-                <h2 className="text-[15vw] lg:text-[10vw] font-just-another-hand uppercase font-normal leading-[0.8] tracking-tight text-[#F9F8F6]">
-                  DINE<br /><span className="text-[#D1BB94]">WITH</span> US
+          {/* Top Split Layout - Title Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-24">
+
+            {/* Left: Large Title & Description */}
+            <div className="flex flex-col justify-center space-y-8">
+              <div className="space-y-4">
+                <div className="w-8 h-8 text-[#27618E]">✦</div>
+                <h2 className="text-6xl lg:text-8xl font-just-another-hand uppercase leading-[0.9] text-[#27618E] tracking-tight">
+                  DINING<br />OPTIONS
                 </h2>
-                <p className="text-[#F9F8F6]/70 text-2xl font-light leading-relaxed max-w-sm font-just-another-hand tracking-wide">
-                  Where every meal is a celebration. From sun-drenched lunches to moonlit island rhythms.
-                </p>
               </div>
+              <p className="text-[#27618E]/70 text-base lg:text-lg leading-relaxed max-w-md">
+                Whether you're seeking an intimate dinner, a lively group celebration, or a private event, our versatile spaces and menus are designed to create unforgettable Caribbean experiences.
+              </p>
+            </div>
 
-              {/* Overlapping Image Composition */}
-              <div className="relative pt-12">
-                <div className="relative z-20 w-[85%] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-700">
-                  <img
-                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200"
-                    alt="Lively Dining Space"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#27618E]/60 to-transparent"></div>
+            {/* Right: Hero Image */}
+            <div className="relative aspect-[4/3] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-xl">
+              <video
+                autoPlay muted loop playsInline
+                preload="metadata"
+                poster="https://res.cloudinary.com/dzjqki9gi/video/upload/v1766502983/4170498-uhd_3840_2160_25fps_zhnymf.jpg"
+                className="w-full h-full object-cover"
+              >
+                <source src="https://res.cloudinary.com/dzjqki9gi/video/upload/v1766502983/4170498-uhd_3840_2160_25fps_zhnymf.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#27618E]/30 to-transparent"></div>
+            </div>
+
+          </div>
+
+          {/* Service Options Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+            {/* Book Table Card */}
+            <div
+              onClick={() => onNavigate('reservations')}
+              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+            >
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
+                  <Calendar className="w-8 h-8" />
                 </div>
-                {/* Floating Badge */}
-                <div className="absolute -bottom-10 -right-5 z-30 w-40 h-40 bg-[#D1BB94] rounded-full flex items-center justify-center text-[#27618E] transform rotate-12 shadow-xl border-4 border-[#27618E]">
-                  <div className="text-center">
-                    <p className="font-just-another-hand text-4xl leading-none">Vibe</p>
-                    <p className="text-[10px] font-black uppercase tracking-widest">Guaranteed</p>
-                  </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Book Your Table</h3>
+                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
+                    Reserve your spot for an unforgettable dining experience. Perfect for intimate meals, large groups, and special events.
+                  </p>
+                </div>
+                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                  <span className="mr-2">RESERVE NOW</span>
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Interactive Cards & Video */}
-            <div className="w-full lg:w-[55%] space-y-16 lg:pt-32">
-
-              {/* Main Booking Card */}
-              <div
-                onClick={() => onNavigate('reservations')}
-                className="group relative bg-[#F9F8F6] p-12 rounded-[4rem] cursor-pointer shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D1BB94]/10 rounded-bl-[4rem]"></div>
-                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
-                  <div className="space-y-4">
-                    <span className="font-just-another-hand text-4xl text-[#27618E]">Grab a spot</span>
-                    <h3 className="text-6xl font-just-another-hand text-[#27618E] leading-none uppercase">Book Your Table</h3>
-                    <p className="text-[#27618E]/60 text-sm tracking-widest uppercase font-bold">Intimate Meals • Large Groups • Events</p>
-                  </div>
-                  <div className="w-20 h-20 rounded-full bg-[#27618E] flex items-center justify-center text-[#F9F8F6] transition-transform duration-500 group-hover:bg-[#D1BB94] group-hover:scale-110">
-                    <Calendar className="w-8 h-8" />
-                  </div>
+            {/* Delivery Card */}
+            <div
+              onClick={() => onNavigate('order')}
+              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+            >
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
+                  <ShoppingBag className="w-8 h-8" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Delivery & Collection</h3>
+                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
+                    Enjoy our authentic Caribbean flavors at home. Fast delivery and convenient collection options available.
+                  </p>
+                </div>
+                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                  <span className="mr-2">ORDER NOW</span>
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
+            </div>
 
-              {/* Video and Secondary Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-                {/* Video Card - More Organic Styling */}
-                <div className="md:col-span-2 relative aspect-video rounded-[3.5rem] overflow-hidden shadow-2xl group/vid">
-                  <video
-                    autoPlay muted loop playsInline
-                    className="w-full h-full object-cover brightness-[0.7] group-hover/vid:brightness-[0.9] transition-all duration-1000"
-                  >
-                    <source src="https://res.cloudinary.com/dzjqki9gi/video/upload/v1766502983/4170498-uhd_3840_2160_25fps_zhnymf.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-x-8 bottom-8 flex justify-between items-end">
-                    <div className="bg-[#F9F8F6]/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                      <span className="text-[10px] tracking-[0.3em] font-black uppercase text-white">Feel the rhythm</span>
-                    </div>
-                    <p className="font-just-another-hand text-5xl text-white opacity-0 group-hover/vid:opacity-100 transition-opacity duration-700">Live @ Spiced Roots</p>
-                  </div>
+            {/* Parties Card */}
+            <div
+              onClick={() => onNavigate('catering')}
+              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+            >
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
+                  <Utensils className="w-8 h-8" />
                 </div>
-
-                {/* Delivery Card */}
-                <div
-                  onClick={() => onNavigate('order')}
-                  className="group bg-[#D1BB94] p-10 rounded-[3rem] cursor-pointer shadow-xl transition-all duration-500 hover:-translate-y-2"
-                >
-                  <div className="flex flex-col h-full justify-between gap-12">
-                    <div className="w-16 h-16 rounded-2xl bg-[#27618E] flex items-center justify-center text-[#F9F8F6]">
-                      <ShoppingBag className="w-8 h-8" />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-5xl font-just-another-hand text-[#27618E] leading-none uppercase">Get the heat</h4>
-                      <p className="text-[#27618E]/70 text-[10px] tracking-[0.2em] font-black uppercase flex items-center">
-                        Delivery & Collection <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                      </p>
-                    </div>
-                  </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Catering</h3>
+                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
+                    Host your celebration with us. From birthdays to corporate events, we create memorable experiences.
+                  </p>
                 </div>
-
-                {/* Events Card */}
-                <div
-                  onClick={() => onNavigate('menu')}
-                  className="group bg-[#F9F8F6]/5 border border-[#F9F8F6]/20 p-10 rounded-[3rem] cursor-pointer shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-[#F9F8F6]/10"
-                >
-                  <div className="flex flex-col h-full justify-between gap-12">
-                    <div className="w-16 h-16 rounded-2xl bg-[#F9F8F6]/10 flex items-center justify-center text-[#F9F8F6]">
-                      <Utensils className="w-8 h-8" />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-5xl font-just-another-hand text-[#F9F8F6] leading-none uppercase">Parties</h4>
-                      <p className="text-[#F9F8F6]/50 text-[10px] tracking-[0.2em] font-black uppercase flex items-center">
-                        Private Events <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                      </p>
-                    </div>
-                  </div>
+                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                  <span className="mr-2">LEARN MORE</span>
+                  <ArrowRight className="w-4 h-4" />
                 </div>
-
               </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
-      {/* Optimized Occasions Editorial Section - STRICT HEIGHT REDUCTION */}
+      {/* Redesigned Occasions Section - Full-Width Creative Layout */}
       <section
         ref={occasionsRef}
-        className="bg-[#fcfaf7] py-24 sm:py-48 px-6 sm:px-12 overflow-hidden relative"
+        className="bg-[#fcfaf7] py-16 lg:py-24 overflow-hidden relative"
       >
-        <div className="max-w-[1400px] mx-auto">
-          {/* Top Row: Panoramic Layout */}
-          <div className="relative flex flex-col md:flex-row items-end justify-between mb-24 md:mb-40 space-y-12 md:space-y-0">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-12">
 
-            {/* Image 1: Dining Ambience - Wide Aspect to halve height strictly */}
+          {/* Section Title */}
+          <div className={`text-center mb-12 lg:mb-16 transition-all duration-[1.2s] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="text-7xl lg:text-9xl font-just-another-hand text-[#27618E] leading-none tracking-tight mb-4">
+              Perfect for Any Occasion
+            </h2>
+            <p className="text-[#27618E]/70 text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+              From intimate dinners to grand celebrations, our vibrant Caribbean soul offers a sophisticated backdrop for every story.
+            </p>
+          </div>
+
+          {/* Creative Asymmetric Grid */}
+          <div className="grid grid-cols-12 gap-4 lg:gap-6">
+
+            {/* Large Left Image - Spans 7 columns */}
             <div
-              className={`w-full md:w-[32%] aspect-[2/1] shadow-lg rounded-[24px] md:rounded-[30px] overflow-hidden group/img transition-all duration-[1.5s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-24 scale-95'}`}
+              className={`col-span-12 lg:col-span-7 aspect-[4/3] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-xl transition-all duration-[1.5s] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-24 scale-95'}`}
             >
-              <img
+              <OptimizedImage
                 src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507464/pexels-snappr-27556972_q4exwt.jpg"
-                alt="Sophisticated Dining"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                alt="Sophisticated dining experience at Spiced Roots Caribbean restaurant"
+                className="hover:scale-110 transition-transform duration-1000"
+                sizes="(max-width: 768px) 100vw, 58vw"
               />
             </div>
 
-            {/* Image 2: Detail Shot (Floating) - Panoramic Aspect */}
-            <div
-              className={`w-2/3 md:w-[24%] aspect-[2/1] self-end md:self-auto md:absolute md:left-[42%] md:top-[-10%] shadow-md rounded-[24px] md:rounded-[30px] overflow-hidden z-10 transition-all duration-[1.8s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-200 ${isVisible ? 'opacity-100 translate-y-0 scale-100 blur-0' : 'opacity-0 translate-y-32 scale-75 blur-md'}`}
-            >
-              <img
-                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507462/pexels-valeriya-1860208_tpsg5l.jpg"
-                alt="Close-up detail"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-
-            {/* Image 3: Portrait / Vibe - Panoramic Aspect */}
-            <div
-              className={`w-full md:w-[25%] aspect-[2/1] shadow-lg rounded-[24px] md:rounded-[30px] overflow-hidden transition-all duration-[1.5s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-400 ${isVisible ? 'opacity-100 translate-x-0 rotate-1' : 'opacity-0 translate-x-24 rotate-6'}`}
-            >
-              <img
-                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507460/pexels-marlein-16021268_x5ezqi.jpg"
-                alt="Atmospheric Portrait"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-1000"
-              />
-            </div>
-          </div>
-
-          {/* Central Editorial Text */}
-          <div className="flex flex-col items-center justify-center my-32 md:my-56">
-            <div className={`text-center transition-all duration-[1.2s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h2 className="text-[16vw] sm:text-[14vw] md:text-[12vw] font-just-another-hand text-black leading-none tracking-tight">
-                "The perfect place for<br />
-                <span className={`block md:ml-[25vw] text-black transition-all duration-[1.5s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>any occasion"</span>
-              </h2>
-            </div>
-            <div className={`max-w-xl mt-10 md:mt-16 text-center transition-all duration-[1.2s] delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-              <p className="text-black/70 text-base md:text-xl font-light leading-relaxed px-4 md:px-0">
-                Whether it's a milestone birthday, a corporate gathering, or an intimate festive celebration, our vibrant Caribbean soul offers a sophisticated backdrop for every story.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom Row: Entrance from Bottom - STRICT HEIGHT REDUCTION */}
-          <div className="flex flex-col md:flex-row items-start justify-center md:space-x-32 space-y-16 md:space-y-0">
-
-            {/* Image 4: Dish Presentation - Panoramic Aspect */}
-            <div
-              className={`w-full md:w-[35%] aspect-[2/1] transition-all duration-[1.5s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
-            >
-              <div className="shadow-2xl rounded-[24px] md:rounded-[30px] overflow-hidden mb-6 group/dish h-full">
-                <img
-                  src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507458/pexels-jcabrera-5041487_kricqz.jpg"
-                  alt="Signature Dish"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover/dish:scale-105"
+            {/* Right Column - Two Stacked Images */}
+            <div className="col-span-12 lg:col-span-5 flex flex-col gap-4 lg:gap-6">
+              {/* Top Right */}
+              <div
+                className={`aspect-[16/9] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg transition-all duration-[1.5s] delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
+              >
+                <OptimizedImage
+                  src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507462/pexels-valeriya-1860208_tpsg5l.jpg"
+                  alt="Caribbean cuisine close-up detail with vibrant presentation"
+                  className="hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 42vw"
                 />
               </div>
-              <p className="text-black text-[9px] md:text-[10px] tracking-[0.4em] uppercase font-bold text-center opacity-40">Signature Dish</p>
+              {/* Bottom Right */}
+              <div
+                className={`aspect-[16/9] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg transition-all duration-[1.5s] delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
+              >
+                <OptimizedImage
+                  src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507460/pexels-marlein-16021268_x5ezqi.jpg"
+                  alt="Atmospheric dining portrait at Spiced Roots"
+                  className="hover:scale-110 transition-transform duration-1000"
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                />
+              </div>
             </div>
 
-            {/* Image 5: Large Group Experience - Extra Wide Panoramic Aspect */}
-            <div
-              className={`w-full md:w-[38%] aspect-[3/1] shadow-2xl rounded-[24px] md:rounded-[30px] overflow-hidden md:mt-24 transition-all duration-[1.8s] ease-[cubic-bezier(0.16, 1, 0.3, 1)] delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'}`}
-            >
-              <img
-                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507431/pexels-isabella-mendes-107313-1304540_lfh3rd.jpg"
-                alt="Social Celebration"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+            {/* Bottom Row - Two Images Side by Side */}
+            <div className="col-span-12 lg:col-span-6 aspect-[16/9] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-xl transition-all duration-[1.5s] delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}">
+              <OptimizedImage
+                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507458/pexels-jcabrera-5041487_kricqz.jpg"
+                alt="Signature Caribbean dish beautifully plated"
+                className="hover:scale-105 transition-transform duration-1000"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-          </div>
-        </div>
 
-        {/* Decorative Background Accents */}
-        <div className={`absolute top-1/4 left-[-10%] w-[40vw] h-[40vw] border border-black/[0.03] rounded-full transition-transform duration-[4s] linear ${isVisible ? 'scale-110 rotate-12' : 'scale-100 rotate-0'}`}></div>
+            <div className="col-span-12 lg:col-span-6 aspect-[16/9] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-xl transition-all duration-[1.8s] delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'}">
+              <OptimizedImage
+                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766507431/pexels-isabella-mendes-107313-1304540_lfh3rd.jpg"
+                alt="Social celebration and gathering at Spiced Roots"
+                className="hover:scale-105 transition-transform duration-1000"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+
+          </div>
+
+        </div>
       </section>
 
       {/* Reviews Sector - REVERTED TO TWO-COLUMN DESIGN */}
@@ -470,8 +494,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <Star key={i} className="w-4 h-4 text-accent-pink fill-accent-pink" />
                 ))}
               </div>
-              <p className="serif italic text-3xl text-accent-pink leading-tight">"{currentReview.title}"</p>
-              <p className="text-xl font-light text-white/70 leading-relaxed italic">
+              <p className="serif italic text-3xl text-[#27618E] leading-tight">"{currentReview.title}"</p>
+              <p className="text-xl font-light text-[#27618E]/80 leading-relaxed italic">
                 {currentReview.content}
               </p>
               <div className="flex flex-col items-center pt-4">
@@ -518,13 +542,6 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </section>
 
       <style>{`
-        @keyframes scroll-fast {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll-fast {
-          animation: scroll-fast 20s linear infinite;
-        }
         @keyframes sublte-zoom {
           from { transform: scale(1.1); }
           to { transform: scale(1.0); }

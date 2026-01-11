@@ -1,94 +1,97 @@
 
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import backgroundImage from '../assets/new.jpg';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-28">
-      {/* Hero Header - Deep green background and white text */}
-      <section className="bg-deep-green px-4 sm:px-6 lg:px-8 py-24 md:py-40">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-7xl sm:text-9xl serif uppercase font-medium tracking-tighter mb-8 text-white">THE ROOTS</h1>
-          <p className="text-accent-pink text-lg sm:text-2xl serif italic max-w-3xl mx-auto leading-relaxed">
-            "A story of spice, soul, and the vibrant culture of the Caribbean islands, planted in the heart of Oxford's Cowley Road."
-          </p>
-        </div>
-      </section>
+    <div className="pt-28 min-h-screen overflow-hidden pb-20">
+      {/* Heritage Section - Matching Home Page */}
+      <section className="relative py-24 lg:py-40 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        {/* Overlay for readability - adjusted opacity */}
+        <div className="absolute inset-0 bg-[#F9F8F6]/90 z-0"></div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
 
-      {/* Editorial Sticky Section */}
-      <section className="relative flex flex-col lg:flex-row min-h-[200vh] bg-[#fcfaf7]">
-        
-        {/* Left Side: Sticky Content */}
-        <div className="w-full lg:w-1/2 lg:h-screen lg:sticky lg:top-0 flex items-center justify-center bg-[#fcfaf7] p-8 md:p-20 lg:p-32">
-          <div className="max-w-md space-y-12 text-center lg:text-left">
-            <div className="flex justify-center lg:justify-start">
-              <span className="text-black text-5xl">✦</span>
-            </div>
-            
-            <h2 className="text-[12vw] lg:text-8xl font-bold uppercase tracking-tighter leading-none text-black">
-              OUR STORY
-            </h2>
-            
-            <div className="space-y-6 text-black/80 text-lg leading-relaxed font-light">
-              <p>
-                Founded in 2016, Spiced Roots was born from a desire to bring true, uncompromised Caribbean gastronomy to the heart of the UK.
-              </p>
-              <p>
-                What started as a small dream on Cowley Road has grown into a landmark destination for food lovers seeking the intersection of tradition and modern technique.
-              </p>
-              <p>
-                Our kitchen remains the heartbeat of our operation, where the rhythm of the islands meets the precision of fine dining.
-              </p>
-            </div>
-          </div>
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-        {/* Right Side: Scrolling Panels */}
-        <div className="w-full lg:w-1/2 flex flex-col">
-          
-          {/* Panel 1: The Owner Image */}
-          <div className="h-screen w-full bg-accent-pink flex items-center justify-center p-6 md:p-20">
-            <div className="relative w-full h-full max-w-xl max-h-[700px] overflow-hidden rounded-sm shadow-2xl">
-              <img 
-                src="https://res.cloudinary.com/dzjqki9gi/image/upload/v1766779725/pexels-cottonbro-4253292_ff1zar.jpg" 
-                alt="Kitchen atmosphere" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+            {/* Left Column: Typography & Text */}
+            <div className="space-y-10 relative z-10">
 
-          {/* Panel 2: The Quote */}
-          <div className="h-screen w-full bg-deep-green flex flex-col items-center justify-center p-8 md:p-20 text-center relative overflow-hidden border-l border-white/5">
-            <div className="relative z-10 max-w-2xl">
-              <h3 className="text-[10vw] lg:text-[7vw] serif italic text-white leading-[0.9] tracking-tight mb-12">
-                "We make food that makes people happy"
-              </h3>
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-[1px] bg-accent-pink"></div>
-                <p className="text-xs tracking-[0.4em] font-bold uppercase text-white pt-4">
-                  THE SPICED ROOTS CREDO
+              {/* Header Tag */}
+              <div className="flex items-center space-x-4 animate-reveal-up" style={{ animationDelay: '0.1s' }}>
+                <div className="h-[2px] w-12 bg-[#D1BB94]"></div>
+                <span className="text-[#D1BB94] font-medium tracking-[0.2em] text-sm uppercase">The Heritage</span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="leading-[0.9] animate-reveal-up" style={{ animationDelay: '0.2s' }}>
+                <div className="block font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem]">
+                  VIBRANT
+                </div>
+                <div className="block -mt-4 sm:-mt-8">
+                  <span className="font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem]">SOUL, </span>
+                  <span className="font-serif italic font-bold text-[#D1BB94] text-[12vw] sm:text-[7rem] ml-2">ROOTED</span>
+                </div>
+                <div className="block font-just-another-hand text-[#27618E] text-[15vw] sm:text-[9rem] -mt-4 sm:-mt-8">
+                  IN TRADITION
+                </div>
+              </h1>
+
+              {/* Quote */}
+              <blockquote className="text-[#27618E]/90 font-serif italic text-xl sm:text-2xl leading-relaxed border-l-0 pl-0 mt-8 animate-reveal-up" style={{ animationDelay: '0.3s' }}>
+                "We don't just cook food; we share the stories of our grandmothers, the rhythm of our islands, and the warmth of Caribbean hospitality."
+              </blockquote>
+
+              {/* Body Text */}
+              <div className="text-[#27618E]/70 font-light text-base sm:text-lg leading-relaxed space-y-6 max-w-lg animate-reveal-up" style={{ animationDelay: '0.4s' }}>
+                <p>
+                  Founded with a mission to elevate Caribbean cuisine in Oxford, Spiced Roots blends traditional jerk-pit methods with contemporary techniques.
+                </p>
+                <p>
+                  Every spice is toasted by hand, every curry slow-cooked for hours, and every cocktail crafted with the finest aged rums.
                 </p>
               </div>
-            </div>
-            
-            {/* Background Texture/Accent */}
-            <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border-[1px] border-white rounded-full"></div>
-            </div>
-          </div>
 
+              {/* CTA */}
+              <div className="group flex items-center space-x-4 pt-4 animate-reveal-up cursor-pointer w-fit" style={{ animationDelay: '0.5s' }}>
+                <span className="text-[#27618E] font-bold tracking-[0.2em] text-sm uppercase group-hover:text-[#D1BB94] transition-colors">Our Story</span>
+                <div className="w-12 h-12 rounded-full border border-[#27618E]/20 flex items-center justify-center group-hover:border-[#D1BB94] group-hover:bg-[#D1BB94] group-hover:text-white text-[#27618E] transition-all duration-300">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right Column: Imagery - Refined Layout */}
+            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
+
+              {/* Main Image (Food) - Cleaner Lines */}
+              <div className="relative z-10 w-[85%] max-w-md transform -translate-x-4 sm:-translate-x-8 -translate-y-8">
+                <div className="overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700">
+                  <img
+                    src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1935&auto=format&fit=crop"
+                    alt="Jerk Ribs"
+                    className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-1000"
+                  />
+                </div>
+              </div>
+
+              {/* Secondary Image (Interior) - White Border for Separation */}
+              <div className="absolute bottom-12 right-0 sm:right-8 w-[55%] max-w-xs z-20 transform translate-y-12">
+                <div className="p-0 bg-white rounded-xl shadow-2xl rotate-[3deg] hover:rotate-0 transition-transform duration-700 border-[8px] border-white">
+                  <img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                    alt="Restaurant Interior"
+                    className="w-full h-auto object-cover aspect-square rounded-lg"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </section>
-
-      {/* Philosophy Callout */}
-      <div className="bg-deep-green">
-        <section className="py-40 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-          <span className="text-accent-pink text-4xl mb-8 block">✦</span>
-          <h2 className="text-5xl sm:text-7xl serif uppercase font-medium tracking-tighter mb-12 text-white">OUR PHILOSOPHY</h2>
-          <p className="text-2xl font-light text-white/70 leading-relaxed italic">
-            "We believe food is a bridge. It connects us to our past, it brings strangers together, and it heals the soul. Every dish we serve carries the weight of history and the joy of life."
-          </p>
-        </section>
-      </div>
     </div>
   );
 };

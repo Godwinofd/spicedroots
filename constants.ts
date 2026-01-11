@@ -8,7 +8,8 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Jerk chicken spring rolls',
     description: 'Crispy spring rolls filled with marinated jerk chicken and herbs.',
     price: 4.95,
-    category: 'Starters'
+    category: 'Starters',
+    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 's2',
@@ -16,7 +17,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Soft fried bread (barra) filled with curried chickpeas.',
     price: 4.95,
     category: 'Starters',
-    isVegetarian: true
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 's3',
@@ -24,7 +26,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'With smoked paprika aioli & grilled octopus salad.',
     price: 7.00,
     category: 'Starters',
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 's4',
@@ -32,7 +35,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'With toasted bara & smoked pepper prawns.',
     price: 6.50,
     category: 'Starters',
-    isVegetarian: true
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=2070&auto=format&fit=crop'
   },
   // Mains
   {
@@ -41,7 +45,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'With papaya chutney & sweet potato chips.',
     price: 19.50,
     category: 'Mains',
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop'
   },
   {
     id: 'm2',
@@ -49,7 +54,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Jerk sauce, rice & peas salad.',
     price: 16.50,
     category: 'Mains',
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1598514983318-2f64f8f4796c?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'm3',
@@ -57,14 +63,16 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Steamed rice & salad.',
     price: 16.50,
     category: 'Mains',
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1548946522-4a313e8972a4?q=80&w=2126&auto=format&fit=crop'
   },
   {
     id: 'm4',
     name: 'Slow braised Jamaican oxtail',
     description: 'Butter beans, mac n cheese & coleslaw.',
     price: 19.00,
-    category: 'Mains'
+    category: 'Mains',
+    image: 'https://images.unsplash.com/photo-1544333334-972161b3531b?q=80&w=2069&auto=format&fit=crop'
   },
   {
     id: 'm5',
@@ -72,14 +80,16 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Cassava, bodi & hominy purée.',
     price: 16.90,
     category: 'Mains',
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'm6',
     name: 'Fried king prawns',
     description: 'With pimento sauce & curry channa, potato & roti.',
     price: 16.50,
-    category: 'Mains'
+    category: 'Mains',
+    image: 'https://images.unsplash.com/photo-1559131397-f94da358f7ca?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'm7',
@@ -87,7 +97,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'With pumpkin talkari.',
     price: 15.50,
     category: 'Mains',
-    isVegetarian: true
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'm8',
@@ -96,7 +107,8 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 16.50,
     category: 'Mains',
     isVegetarian: true,
-    isGlutenFree: true
+    isGlutenFree: true,
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2070&auto=format&fit=crop'
   },
   // Sweets
   {
@@ -105,51 +117,57 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'With caramelized banana glaze.',
     price: 7.00,
     category: 'Sweets',
-    isVegetarian: true
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'sw2',
     name: 'Classic rum cake',
     description: 'With rum & raisin ice cream.',
     price: 7.00,
-    category: 'Sweets'
+    category: 'Sweets',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=2089&auto=format&fit=crop'
   },
   {
     id: 'sw3',
     name: 'Coffee glazed chocolate brownie',
     description: 'With Guinness ice cream.',
     price: 7.00,
-    category: 'Sweets'
+    category: 'Sweets',
+    image: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?q=80&w=2070&auto=format&fit=crop'
   },
   // Sides
-  { id: 'si1', name: 'Festivals', description: '', price: 3.00, category: 'Sides', isVegetarian: true },
-  { id: 'si2', name: 'Roti (dhal puri)', description: '', price: 3.00, category: 'Sides', isVegetarian: true },
-  { id: 'si3', name: 'Sweet potato chips', description: 'With sweet chilli sauce.', price: 4.00, category: 'Sides' },
-  { id: 'si4', name: 'Green salad', description: '', price: 4.00, category: 'Sides' },
-  { id: 'si5', name: 'Rice & peas / plain rice', description: '', price: 4.00, category: 'Sides' },
-  { id: 'si6', name: 'Mac & cheese', description: '', price: 4.00, category: 'Sides' },
-  { id: 'si7', name: 'Ripe plantain', description: '', price: 4.00, category: 'Sides', isVegetarian: true },
+  { id: 'si1', name: 'Festivals', description: '', price: 3.00, category: 'Sides', isVegetarian: true, image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si2', name: 'Roti (dhal puri)', description: '', price: 3.00, category: 'Sides', isVegetarian: true, image: 'https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si3', name: 'Sweet potato chips', description: 'With sweet chilli sauce.', price: 4.00, category: 'Sides', image: 'https://images.unsplash.com/photo-1534939561122-0d12d7c5ed24?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si4', name: 'Green salad', description: '', price: 4.00, category: 'Sides', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si5', name: 'Rice & peas / plain rice', description: '', price: 4.00, category: 'Sides', image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si6', name: 'Mac & cheese', description: '', price: 4.00, category: 'Sides', image: 'https://images.unsplash.com/photo-1543339308-43e59d6ba73a?q=80&w=2070&auto=format&fit=crop' },
+  { id: 'si7', name: 'Ripe plantain', description: '', price: 4.00, category: 'Sides', isVegetarian: true, image: 'https://images.unsplash.com/photo-1623065600325-15a0c1e55048?q=80&w=2070&auto=format&fit=crop' },
   // Rum Bar
   {
     id: 'rb1',
     name: 'Rum bar dark n’ stormy',
     description: 'Gosling / lime / ginger beer / bitters',
     price: 9.50,
-    category: 'Rum Bar'
+    category: 'Rum Bar',
+    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'rb2',
     name: 'Trinidad Sour',
     description: 'Angostura bitters / lime / almond orgeat',
     price: 9.50,
-    category: 'Rum Bar'
+    category: 'Rum Bar',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'rb3',
     name: 'Mauby Old Fashioned',
     description: 'Appleton 12 / mauby bitters / orange peel',
     price: 9.50,
-    category: 'Rum Bar'
+    category: 'Rum Bar',
+    image: 'https://images.unsplash.com/photo-1470333738027-52dfdc48c8df?q=80&w=2070&auto=format&fit=crop'
   }
 ];
 
@@ -237,5 +255,48 @@ export const REVIEWS: Review[] = [
     rating: 5,
     title: 'BEST BRUNCH SPOT',
     content: 'Their weekend vibes are unmatched. Great music and the ackee and saltfish is the best way to start a Saturday.'
+  }
+];
+
+export const RUM_CATALOG = [
+  {
+    id: 'rum1',
+    name: 'Appleton Estate 12 Year Rare Casks',
+    origin: 'Jamaica',
+    description: 'A masterpiece of oak aging, featuring deep bronze color and notes of toasted oak, dried fruits, and hazelnut.',
+    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop',
+    notes: 'Toasted Oak, Hazelnut, Molasses'
+  },
+  {
+    id: 'rum2',
+    name: 'Mount Gay Eclipse',
+    origin: 'Barbados',
+    description: 'The distinctive golden amber rum with a complex aroma of floral and fruity notes, apricot, and banana.',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2070&auto=format&fit=crop',
+    notes: 'Apricot, Banana, Vanilla'
+  },
+  {
+    id: 'rum3',
+    name: 'El Dorado 15 Year Old Special Reserve',
+    origin: 'Guyana',
+    description: 'A long-simmered blend of heavy rums, some up to 15 years old. Rich, complex with a smooth finish.',
+    image: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=2070&auto=format&fit=crop',
+    notes: 'Coffee, Candied Orange, Almond'
+  },
+  {
+    id: 'rum4',
+    name: 'Diplomático Reserva Exclusiva',
+    origin: 'Venezuela',
+    description: 'A blend of copper pot still rums aged for up to 12 years. Exceptionally smooth and easy to drink.',
+    image: 'https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?q=80&w=2070&auto=format&fit=crop',
+    notes: 'Maple Syrup, Orange Peel, Licorice'
+  },
+  {
+    id: 'rum5',
+    name: 'Wray & Nephew White Overproof',
+    origin: 'Jamaica',
+    description: 'The world\'s top-selling overproof rum. A bartender staple with high intensity and legendary status.',
+    image: 'https://images.unsplash.com/photo-1560512823-829485b8bf24?q=80&w=2070&auto=format&fit=crop',
+    notes: 'Pear Drop, Banana, Grass'
   }
 ];

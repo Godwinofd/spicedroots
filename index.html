@@ -4,13 +4,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spiced Roots Oxford | Caribbean Fusion</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Primary Meta Tags -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com https://res.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://esm.sh;">
+  <title>Spiced Roots Oxford | Authentic Caribbean Restaurant & Rum Bar on Cowley Road</title>
+  <meta name="title" content="Spiced Roots Oxford | Authentic Caribbean Restaurant & Rum Bar">
+  <meta name="description"
+    content="Experience authentic Caribbean cuisine in Oxford. Award-winning jerk chicken, curry goat, rum cocktails & catering on Cowley Road. Book your table today or order delivery.">
+  <meta name="keywords"
+    content="Caribbean restaurant Oxford, jerk chicken Oxford, rum bar Oxford, Cowley Road restaurant, Caribbean food Oxford, curry goat, catering Oxford, authentic Caribbean cuisine">
+  <meta name="author" content="Spiced Roots Oxford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://spicedroots.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:url" content="https://spicedroots.com/">
+  <meta property="og:title" content="Spiced Roots Oxford | Authentic Caribbean Restaurant & Rum Bar">
+  <meta property="og:description"
+    content="Experience authentic Caribbean cuisine in Oxford. Award-winning jerk chicken, curry goat, and premium rum cocktails on Cowley Road.">
+  <meta property="og:image" content="https://spicedroots.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Spiced Roots Oxford">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://spicedroots.com/">
+  <meta name="twitter:title" content="Spiced Roots Oxford | Authentic Caribbean Restaurant">
+  <meta name="twitter:description"
+    content="Experience authentic Caribbean cuisine in Oxford. Award-winning jerk chicken, curry goat, and premium rum cocktails.">
+  <meta name="twitter:image" content="https://spicedroots.com/assets/twitter-card.jpg">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="GB-OXF">
+  <meta name="geo.placename" content="Oxford">
+  <meta name="geo.position" content="51.7520;-1.2577">
+  <meta name="ICBM" content="51.7520, -1.2577">
+
+  <!-- Structured Data - Restaurant Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Spiced Roots Oxford",
+    "image": [
+      "https://spicedroots.com/assets/restaurant-1.jpg",
+      "https://spicedroots.com/assets/restaurant-2.jpg",
+      "https://spicedroots.com/assets/restaurant-3.jpg"
+    ],
+    "priceRange": "££",
+    "servesCuisine": ["Caribbean", "Jamaican", "Fusion"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cowley Road",
+      "addressLocality": "Oxford",
+      "addressRegion": "Oxfordshire",
+      "postalCode": "OX4",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.7520,
+      "longitude": -1.2577
+    },
+    "url": "https://spicedroots.com",
+    "telephone": "+44-1865-249888",
+    "email": "hello@spicedroots.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "12:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "12:00",
+        "closes": "00:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "22:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "menu": "https://spicedroots.com/#menu",
+    "acceptsReservations": "True",
+    "hasMenu": {
+      "@type": "Menu",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Starters",
+          "description": "Authentic Caribbean appetizers"
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Mains",
+          "description": "Traditional Caribbean main courses"
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Rum Bar",
+          "description": "Premium Caribbean rum cocktails"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Fonts with display=swap for performance -->
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&family=Just+Another+Hand&display=swap"
     rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       font-family: 'Outfit', sans-serif;
@@ -80,6 +209,43 @@
 
     ::-webkit-scrollbar-thumb:hover {
       background: #27618E;
+    }
+
+    /* Ticker animation */
+    @keyframes scroll-fast {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll-fast {
+      animation: scroll-fast 20s linear infinite;
+    }
+
+
+
+    /* Reduced motion support for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Performance optimization - contain layout shifts */
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
     }
   </style>
   <script type="importmap">
