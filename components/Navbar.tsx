@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Page } from '../types';
 import { ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface NavbarProps {
   currentPage: Page;
@@ -54,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         }`}
     >
       <div className="max-w-[1600px] mx-auto h-full px-6 sm:px-12">
-        <div className="flex justify-between items-center h-full relative z-[110]">
+        <div className="flex justify-between items-center h-full relative">
 
           {/* Left side - Logo integration */}
           <div className="flex-shrink-0 flex items-center">
@@ -64,9 +65,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               className="flex items-center group"
             >
               <img
-                src="/assets/logo.png"
+                src={logo}
                 alt="Spiced Roots Logo"
-                className={`h-12 w-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'brightness-100' : 'brightness-0 invert'}`}
+                className={`h-12 w-auto transition-all duration-500 ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`}
               />
             </a>
           </div>

@@ -139,7 +139,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </div>
 
       {/* Optimized About Us Sector - Enhanced Design V2 */}
-      <section ref={aboutRef} className="relative py-24 lg:py-40 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <section ref={aboutRef} className="relative py-16 lg:py-40 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${backgroundImage})` }}>
         {/* Overlay for readability - adjusted opacity */}
         <div className="absolute inset-0 bg-[#F9F8F6]/90 z-0"></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
@@ -280,7 +280,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </section>
 
       {/* Redesigned Dine With Us Section - Inspired by Reference */}
-      <section ref={diningRef} className="bg-[#fcfaf7] py-20 lg:py-32 px-6 sm:px-12 relative overflow-hidden">
+      <section ref={diningRef} className="bg-[#fcfaf7] py-16 lg:py-32 px-6 sm:px-12 relative overflow-hidden">
 
         <div className="max-w-[1400px] mx-auto relative z-10">
 
@@ -321,7 +321,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             {/* Book Table Card */}
             <div
               onClick={() => onNavigate('reservations')}
-              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
             >
               <div className="space-y-6">
                 <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
@@ -343,7 +343,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             {/* Delivery Card */}
             <div
               onClick={() => onNavigate('order')}
-              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
             >
               <div className="space-y-6">
                 <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
@@ -365,7 +365,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             {/* Parties Card */}
             <div
               onClick={() => onNavigate('catering')}
-              className="group relative bg-white p-8 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
             >
               <div className="space-y-6">
                 <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
@@ -392,7 +392,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* Redesigned Occasions Section - Full-Width Creative Layout */}
       <section
         ref={occasionsRef}
-        className="bg-[#fcfaf7] py-16 lg:py-24 overflow-hidden relative"
+        className="bg-[#fcfaf7] py-12 lg:py-24 overflow-hidden relative"
       >
         <div className="max-w-[1600px] mx-auto px-6 sm:px-12">
 
@@ -480,7 +480,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
           />
         </div>
-        <div className="w-full lg:w-1/2 bg-dark-green p-12 lg:p-24 flex flex-col justify-center items-center text-center relative overflow-hidden">
+        <div className="w-full lg:w-1/2 bg-dark-green p-8 lg:p-24 flex flex-col justify-center items-center text-center relative overflow-hidden">
           <span className="text-accent-pink text-4xl mb-6">✦</span>
           <h2 className="text-7xl sm:text-9xl font-just-another-hand uppercase font-normal leading-none tracking-tight mb-16">
             REVIEWS
