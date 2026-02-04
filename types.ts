@@ -3,11 +3,12 @@ export interface MenuItem {
   id: string;
   name: string;
   description: string;
-  price: number;
-  category: 'Starters' | 'Mains' | 'Sides' | 'Sweets' | 'Rum Bar';
+  price: number | string; // Some are deals like '2 for 6' or ranges
+  category: 'Starters' | 'Mains' | 'Sides' | 'Sweets' | 'Rum Bar' | 'Cocktails' | 'Lunch' | 'Deals' | 'Wine' | 'Soft Drinks';
   image?: string;
   isVegetarian?: boolean;
   isGlutenFree?: boolean;
+  isVegan?: boolean;
 }
 
 export interface Review {

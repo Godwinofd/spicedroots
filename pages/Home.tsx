@@ -4,9 +4,12 @@ import { REVIEWS } from '../constants';
 import { Star, ArrowRight, ShoppingBag, Calendar, ChevronLeft, ChevronRight, Utensils } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 import backgroundImage from '../assets/new.jpg';
-import backgroundImage2 from '../assets/background2.jpg';
 import backgroundImage3 from '../assets/background3.jpg';
+import lambChopsImage from '../assets/lamb-chops.jpg';
 import heroVideo from '../assets/rumbar-1.mp4';
+import backgroundVideo from '../assets/PHOTOBOARD.mp4';
+import menubackground from '../assets/menubackground.png';
+import CocktailImage from '../assets/RedCocktail.jpg.jpeg';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
@@ -20,6 +23,13 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const diningRef = useRef<HTMLDivElement>(null);
   const reviewsRef = useRef<HTMLDivElement>(null);
+  const storyVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (storyVideoRef.current) {
+      storyVideoRef.current.playbackRate = 0.7;
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -131,16 +141,28 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Optimized About Us Sector - Enhanced Design V2 */}
-      <section ref={aboutRef} className="relative py-16 lg:py-40 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        {/* Overlay for readability - adjusted opacity */}
-        <div className="absolute inset-0 bg-[#F9F8F6]/90 z-0"></div>
+      {/* Optimized About Us Sector - Enhanced Design with Video Background */}
+      <section ref={aboutRef} className="relative py-16 lg:py-40 bg-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          ref={storyVideoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+
+        {/* Overlay for readability - adjusted opacity to 75% */}
+        <div className="absolute inset-0 bg-[#F9F8F6]/75 z-0"></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
             {/* Left Column: Typography & Text */}
-            <div className="space-y-10 relative z-10 order-2 lg:order-1">
+            <div className="space-y-10 relative z-10">
 
               {/* Header Tag */}
               <div className="flex items-center space-x-4 animate-reveal-up" style={{ animationDelay: '0.1s' }}>
@@ -191,35 +213,30 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
             </div>
 
-            {/* Right Column: Imagery - Refined Layout */}
-            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0 order-1 lg:order-2">
+            {/* Right Column: Imagery - Refined Layout with Glassmorphism */}
+            <div className="relative h-[500px] sm:h-[700px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
 
-              {/* Main Image (Food) - Cleaner Lines */}
-              <div className="relative z-10 w-[85%] max-w-md transform -translate-x-4 sm:-translate-x-8 -translate-y-8">
-                <div className="overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700">
-                  <OptimizedImage
-                    src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1935&auto=format&fit=crop"
-                    alt="Authentic Caribbean Jerk Ribs with traditional spices"
-                    aspectRatio="aspect-[4/5]"
-                    className="hover:scale-105 transition-transform duration-1000"
-                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 400px"
+              {/* Main Image (Food) - With Glass Effect Border */}
+              <div className="relative z-10 w-[85%] max-w-md transform -translate-x-4 sm:-translate-x-8 -translate-y-8 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
+                <div className="overflow-hidden rounded-2xl shadow-2xl p-2 bg-white/20 backdrop-blur-sm border border-white/30 hover:shadow-gold/20 transition-all duration-700">
+                  <img
+                    src={lambChopsImage}
+                    alt="Authentic Caribbean Jerk Ribs"
+                    className="w-full h-auto object-cover aspect-[4/5] rounded-xl hover:scale-105 transition-transform duration-1000"
                   />
                 </div>
               </div>
 
-              {/* Secondary Image (Interior) - White Border for Separation */}
-              <div className="absolute bottom-12 right-0 sm:right-8 w-[55%] max-w-xs z-20 transform translate-y-12">
-                <div className="p-0 bg-white rounded-xl shadow-2xl rotate-[3deg] hover:rotate-0 transition-transform duration-700 border-[8px] border-white">
-                  <OptimizedImage
-                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
-                    alt="Spiced Roots restaurant interior with Caribbean ambiance"
-                    aspectRatio="aspect-square"
-                    className="rounded-lg"
-                    sizes="(max-width: 768px) 55vw, 300px"
+              {/* Secondary Image (Interior) - Moved further out to reveal the food image behind */}
+              <div className="absolute bottom-4 right-[-5%] w-[55%] max-w-xs z-20 transform translate-y-8 animate-reveal-up" style={{ animationDelay: '0.8s' }}>
+                <div className="p-2 bg-white/40 backdrop-blur-md rounded-2xl shadow-2xl rotate-[3deg] hover:rotate-0 transition-all duration-700 border border-white/50">
+                  <img
+                    src={CocktailImage}
+                    alt="Signature Cocktail"
+                    className="w-full h-auto object-cover aspect-square rounded-xl"
                   />
                 </div>
               </div>
-
 
             </div>
 
@@ -243,7 +260,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <section className="flex flex-col lg:flex-row h-auto lg:h-[90vh]">
         <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-full group overflow-hidden">
           <img
-            src={backgroundImage3}
+            src={menubackground}
             alt="Authentic Caribbean dish"
             className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
           />
