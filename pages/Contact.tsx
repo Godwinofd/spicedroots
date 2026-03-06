@@ -1,23 +1,25 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook, Utensils } from 'lucide-react';
-import backgroundImage from '../assets/background2.jpg';
+import backgroundImage from '../assets/DSC08725.jpg?format=webp&w=1600';
 
 const Contact: React.FC = () => {
   return (
-    <div className="relative min-h-screen pt-32 bg-[#fcfaf7]">
-      {/* Fixed Background Image Layer - Lower z-index to avoid burying footer */}
-      <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#fcfaf7]">
+    <div className="relative min-h-screen pt-32">
+      {/* Background Image — absolute inside same div so bg colour can't block it */}
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={backgroundImage}
           alt="Background"
-          className="w-full h-full object-contain opacity-20"
+          className="w-full h-full object-cover object-center opacity-50"
         />
-        <div className="absolute inset-0 bg-[#fcfaf7]/40"></div>
+        {/* Light cream wash to keep all text and form elements legible */}
+        <div className="absolute inset-0" style={{ background: 'rgba(252,250,247,0.55)' }}></div>
       </div>
+
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pb-32">
         <div className="text-center mb-24">
-          <h1 className="text-8xl sm:text-[11rem] font-just-another-hand uppercase tracking-tighter mb-4 text-[#27618E]">CONTACT</h1>
+          <h1 className="text-6xl sm:text-[11rem] font-just-another-hand uppercase tracking-tighter mb-4 text-[#27618E]">CONTACT</h1>
           <p className="text-[#27618E]/60 tracking-[0.5em] text-[10px] uppercase font-black">We'd love to hear from you</p>
         </div>
 
@@ -26,7 +28,7 @@ const Contact: React.FC = () => {
           {/* Left Column: Contact Details - High Visibility */}
           <div className="space-y-16">
             <div className="space-y-12">
-              <h2 className="text-7xl font-just-another-hand uppercase text-[#27618E]">Get in touch</h2>
+              <h2 className="text-5xl sm:text-7xl font-just-another-hand uppercase text-[#27618E]">Get in touch</h2>
               <div className="space-y-10">
                 {[
                   { icon: MapPin, title: 'Our Location', detail: '64 Cowley Rd, Oxford, OX4 1JB' },
@@ -50,7 +52,7 @@ const Contact: React.FC = () => {
               <h4 className="text-2xl font-just-another-hand tracking-[0.2em] uppercase text-[#27618E]/40">Follow the spice</h4>
               <div className="flex space-x-6">
                 {[Instagram, Facebook].map((Icon, i) => (
-                  <a key={i} href="#" className="w-14 h-14 bg-white border border-[#27618E]/10 text-[#27618E] rounded-2xl flex items-center justify-center hover:bg-[#27618E] hover:text-white hover:scale-110 transition-all shadow-sm">
+                  <a key={i} href="#" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white border border-[#27618E]/10 text-[#27618E] rounded-2xl flex items-center justify-center hover:bg-[#27618E] hover:text-white hover:scale-110 transition-all shadow-sm">
                     <Icon className="w-6 h-6" />
                   </a>
                 ))}

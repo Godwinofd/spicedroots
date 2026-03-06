@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
               Elevating Caribbean cuisine through the mastery of fire, spice, and heritage on Cowley Road.
             </p>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Visit our Instagram" className="text-white/40 hover:text-accent-pink transition-colors">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram" className="text-white/40 hover:text-accent-pink transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Visit our Facebook" className="text-white/40 hover:text-accent-pink transition-colors">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook" className="text-white/40 hover:text-accent-pink transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
