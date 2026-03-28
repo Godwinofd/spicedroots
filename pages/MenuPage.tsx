@@ -12,7 +12,7 @@ const MenuPage: React.FC = () => {
   const categoriesByTab: Record<MenuTab, string[]> = {
     'LUNCH': ['Lunch', 'Deals'],
     'DINNER': ['Starters', 'Mains', 'Sides', 'Sweets'],
-    'DRINKS': ['Cocktails', 'Wine', 'Soft Drinks']
+    'DRINKS': ['Cocktails', 'Rum Bar', 'Beer', 'Wine', 'Soft Drinks']
   };
 
   const currentCategories = categoriesByTab[activeTab];

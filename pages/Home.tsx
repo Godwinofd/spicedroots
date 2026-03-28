@@ -5,32 +5,32 @@ import { Star, ArrowRight, ShoppingBag, Calendar, ChevronLeft, ChevronRight, Ute
 import OptimizedImage from '../components/OptimizedImage';
 import heroVideo from '../assets/rumbar-1.mp4';
 import backgroundVideo from '../assets/PHOTOBOARD.mp4';
-import heritageArt from '../assets/DSC08044.jpg?format=webp&w=1600';
-import heritageStaff from '../assets/DSC08392.jpg?format=webp&w=1600';
-import heritageFamily from '../assets/DSC08040.jpg?format=webp&w=1600';
-import menuBg from '../assets/menubackground.png?format=webp&w=1600';
-import heritageHero from '../assets/DSC08713.jpg?format=webp&w=1600';
-import diningHero from '../assets/DSC08155.jpg?format=webp&w=1600';
-import occasion1 from '../assets/DSC08191.jpg?format=webp&w=800';
-import occasion2 from '../assets/DSC08530.jpg?format=webp&w=800';
-import occasion3 from '../assets/DSC08301.jpg?format=webp&w=800';
-import occasion4 from '../assets/DSC08725.jpg?format=webp&w=800';
-import occasion5 from '../assets/DSC08031.jpg?format=webp&w=800';
-import occasion6 from '../assets/DSC08164.jpg?format=webp&w=800';
-import occasion7 from '../assets/DSC08271.jpg?format=webp&w=800';
-import occasion8 from '../assets/DSC08309.jpg?format=webp&w=800';
-import occasion9 from '../assets/DSC08544.jpg?format=webp&w=800';
-import occasion10 from '../assets/DSC08720.jpg?format=webp&w=800';
-import occasion11 from '../assets/DSC08027.jpg?format=webp&w=800';
-import occasion12 from '../assets/DSC08036.jpg?format=webp&w=800';
-import occasion13 from '../assets/DSC08045.jpg?format=webp&w=800';
-import occasion14 from '../assets/DSC08071.jpg?format=webp&w=800';
-import occasion15 from '../assets/DSC08139.jpg?format=webp&w=800';
-import occasion16 from '../assets/DSC08215.jpg?format=webp&w=800';
-import occasion17 from '../assets/DSC08234.jpg?format=webp&w=800';
-import occasion18 from '../assets/DSC08259.jpg?format=webp&w=800';
-import occasion19 from '../assets/DSC08371.jpg?format=webp&w=800';
-import occasion20 from '../assets/DSC08550.jpg?format=webp&w=800';
+import heritageArt from '../assets/DSC08044.jpg';
+import heritageStaff from '../assets/DSC08392.jpg';
+import heritageFamily from '../assets/DSC08040.jpg';
+import menuBg from '../assets/menubackground.png';
+import heritageHero from '../assets/DSC08713.jpg';
+import diningHero from '../assets/DSC08155.jpg';
+import occasion1 from '../assets/DSC08191.jpg';
+import occasion2 from '../assets/DSC08530.jpg';
+import occasion3 from '../assets/DSC08301.jpg';
+import occasion4 from '../assets/DSC08725.jpg';
+import occasion5 from '../assets/DSC08031.jpg';
+import occasion6 from '../assets/DSC08164.jpg';
+import occasion7 from '../assets/DSC08271.jpg';
+import occasion8 from '../assets/DSC08309.jpg';
+import occasion9 from '../assets/DSC08544.jpg';
+import occasion10 from '../assets/DSC08720.jpg';
+import occasion11 from '../assets/DSC08027.jpg';
+import occasion12 from '../assets/DSC08036.jpg';
+import occasion13 from '../assets/DSC08045.jpg';
+import occasion14 from '../assets/DSC08071.jpg';
+import occasion15 from '../assets/DSC08139.jpg';
+import occasion16 from '../assets/DSC08215.jpg';
+import occasion17 from '../assets/DSC08234.jpg';
+import occasion18 from '../assets/DSC08259.jpg';
+import occasion19 from '../assets/DSC08371.jpg';
+import occasion20 from '../assets/DSC08550.jpg';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
@@ -163,101 +163,88 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Optimized About Us Sector - Enhanced Design with Video Background */}
-      <section id="story" className="relative py-24 lg:py-48 bg-[#F9F8F6] overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src={heritageHero}
-            alt="Spiced Roots Exterior"
-            className="w-full h-full object-cover"
-          />
-          {/* Tonal wash for text legibility - restored to 85% for the night exterior */}
-          <div className="absolute inset-0 bg-[#F9F8F6]/85"></div>
-        </div>
+      {/* ─── OUR STORY (Editorial) ─────────────────────── */}
+      <section id="story" style={{ background: '#F9F8F6', padding: '100px 0', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px' }}>
 
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 relative z-10">
-          <div className="flex flex-col items-center text-center mb-24 max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="h-[1px] w-12 bg-[#D1BB94]"></div>
-              <span className="text-[#D1BB94] font-medium tracking-[0.4em] text-xs uppercase">The Heritage</span>
-              <div className="h-[1px] w-12 bg-[#D1BB94]"></div>
-            </div>
-
-
-
-            <blockquote className="text-[#27618E]/90 font-serif italic text-2xl sm:text-3xl leading-relaxed mb-8 max-w-2xl">
-              "We don't just cook food; we share the stories of our grandmothers, the rhythm of our islands, and the warmth of Caribbean hospitality."
-            </blockquote>
+          {/* Label */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '64px' }}>
+            <div style={{ height: '1px', width: '48px', background: '#D1BB94' }} />
+            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '10px', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#D1BB94', fontWeight: 700 }}>Our Story</span>
+            <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, #D1BB94, transparent)' }} />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
-            {/* 1. Large Feature: Staff/Team Energy */}
-            <div className="lg:col-span-8 group">
-              <div className="rounded-2xl overflow-hidden shadow-2xl relative bg-white p-2 border border-[#D1BB94]/10 transition-transform duration-700 hover:scale-[1.02]">
-                <div className="aspect-[16/10] rounded-xl overflow-hidden">
-                  <img
-                    src={heritageStaff}
-                    alt="Spiced Roots Team"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-[#27618E]/40 text-xs tracking-widest uppercase font-black">01 · Our Energy</p>
-                </div>
+          {/* Two-column split */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+
+            {/* Left: Single image */}
+            <div style={{ position: 'relative' }}>
+              <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 32px 64px rgba(27,46,59,0.15)' }}>
+                <img
+                  src={heritageHero}
+                  alt="Spiced Roots Exterior"
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
+                />
+              </div>
+              {/* Small floating label */}
+              <div style={{ position: 'absolute', bottom: '-16px', right: '-16px', background: '#1a2e3b', color: '#D1BB94', padding: '16px 20px', borderRadius: '2px' }}>
+                <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '9px', letterSpacing: '0.35em', textTransform: 'uppercase', fontWeight: 700, margin: 0 }}>Est. 2019 · Oxford</p>
               </div>
             </div>
 
-            {/* 2. Side Reveal: Heritage Art */}
-            <div className="lg:col-span-4 space-y-12 pb-12">
-              <div className="text-[#27618E]/70 font-light text-xl leading-relaxed space-y-6 animate-reveal-up">
-                <p>
-                  Founded with a mission to elevate Caribbean cuisine in Oxford, Spiced Roots blends traditional jerk-pit methods with contemporary techniques.
-                </p>
-              </div>
-              <div className="group">
-                <div className="rounded-2xl overflow-hidden shadow-xl bg-white p-2 border border-[#D1BB94]/10 rotate-[2deg] hover:rotate-0 transition-all duration-500">
-                  <div className="aspect-square rounded-xl overflow-hidden">
-                    <img
-                      src={heritageArt}
-                      alt="Traditional Heritage"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <p className="text-[#D1BB94] text-xs tracking-[0.4em] uppercase font-bold mt-4 text-center">02 · The Roots</p>
-              </div>
-            </div>
+            {/* Right: Copy */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <h2 className="font-just-another-hand text-6xl sm:text-7xl lg:text-[6.5rem] leading-[0.9] text-[#1a2e3b]">
+                Food is how we remember<br />where we come from.
+              </h2>
 
-            {/* 3. Bottom Anchor: Family Board */}
-            <div className="lg:col-span-5 space-y-8 lg:-mt-20 relative z-20">
-              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-[#D1BB94]/10 -rotate-[1deg] hover:rotate-0 transition-all duration-500">
-                <div className="aspect-[16/10] rounded-xl overflow-hidden">
-                  <img
-                    src={heritageFamily}
-                    alt="Family Board"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-[#27618E]/40 text-xs tracking-widest uppercase font-black">03 · The Community</p>
-            </div>
-
-            <div className="lg:col-span-7 flex flex-col justify-end lg:pl-12 pb-12">
-              <p className="text-[#27618E]/70 font-light text-xl leading-relaxed max-w-md mb-10">
-                Every spice is toasted by hand, every curry slow-cooked for hours, and every cocktail crafted with the finest aged rums.
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '1rem', lineHeight: 1.85, color: '#3a5068', fontWeight: 300, margin: 0 }}>
+                Spiced Roots was born from a simple truth — that the best Caribbean food doesn't need to be dressed up, it just needs to be done properly. When we opened on Cowley Road in 2019, we set out to do justice to the kitchens we grew up in.
               </p>
+
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '1rem', lineHeight: 1.85, color: '#3a5068', fontWeight: 300, margin: 0 }}>
+                Every recipe carries a memory. The jerk is marinated overnight and kissed by smoke. The curries bubble away for half a day. We don't cut corners here, because the people who taught us how to cook never did.
+              </p>
+
+              {/* Three micro-pillars */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', borderTop: '1px solid #D1BB94', paddingTop: '32px', marginTop: '8px' }}>
+                {[
+                  { num: '01', label: 'Craft & Technique' },
+                  { num: '02', label: 'Culture & Community' },
+                  { num: '03', label: 'Rum & Good Company' },
+                ].map(item => (
+                  <div key={item.num}>
+                    <span style={{ display: 'block', fontFamily: 'Arial, sans-serif', fontSize: '9px', letterSpacing: '0.3em', color: '#D1BB94', fontWeight: 700, marginBottom: '8px' }}>{item.num}</span>
+                    <span style={{ fontFamily: 'Georgia, serif', fontSize: '0.875rem', color: '#1a2e3b', lineHeight: 1.4 }}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
               <button
                 onClick={() => onNavigate('about')}
-                className="group flex items-center space-x-6 pt-4 animate-reveal-up w-fit"
+                style={{ alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '12px', fontFamily: 'Arial, sans-serif', fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', fontWeight: 700, color: '#1a2e3b', background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginTop: '8px' }}
               >
-                <span className="text-[#27618E] font-bold tracking-[0.3em] text-sm uppercase group-hover:text-[#D1BB94] transition-colors border-b-2 border-[#D1BB94]/20 pb-1">Our Full Story</span>
-                <div className="w-14 h-14 rounded-full border border-[#27618E]/20 flex items-center justify-center group-hover:border-[#D1BB94] group-hover:bg-[#D1BB94] group-hover:text-white text-[#27618E] transition-all duration-500">
-                  <ArrowRight className="w-6 h-6" />
-                </div>
+                <span style={{ borderBottom: '1px solid #D1BB94', paddingBottom: '4px' }}>Read Our Full Story</span>
+                <ArrowRight style={{ width: '16px', height: '16px', color: '#D1BB94' }} />
               </button>
             </div>
+
           </div>
         </div>
+
+        {/* Responsive overrides */}
+        <style>{`
+          @media (max-width: 900px) {
+            #story > div > div:last-child {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+            #story { padding: 64px 0 !important; }
+            #story > div { padding: 0 24px !important; }
+            #story > div > div:first-child { margin-bottom: 0 !important; }
+          }
+        `}</style>
       </section>
 
       {/* Decorative Ticker */}
@@ -306,131 +293,144 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Redesigned Dine With Us Section - Inspired by Reference */}
-      <section ref={diningRef} className="bg-[#fcfaf7] py-16 lg:py-32 px-6 sm:px-12 relative overflow-hidden">
+      {/* ─── DINE WITH US (Dark Editorial) ─────────────────────── */}
+      <section ref={diningRef} style={{ background: '#1a2e3b', padding: '120px 0', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px' }}>
 
-        <div className="max-w-[1400px] mx-auto relative z-10">
+          {/* Header & Image Split */}
+          <div className="dining-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center', marginBottom: '80px' }}>
 
-          {/* Top Split Layout - Title Left, Image Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-24">
-
-            {/* Left: Large Title & Description */}
-            <div className="flex flex-col justify-center space-y-8">
-              <div className="space-y-4">
-                <div className="w-8 h-8 text-[#27618E]">✦</div>
-                <h2 className="text-6xl lg:text-8xl font-just-another-hand uppercase leading-[0.9] text-[#27618E] tracking-tight">
-                  DINING<br />OPTIONS
-                </h2>
+            {/* Left: Copy */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ height: '1px', width: '48px', background: '#D1BB94' }} />
+                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '10px', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#D1BB94', fontWeight: 700 }}>Join Us</span>
               </div>
-              <p className="text-[#27618E]/70 text-base lg:text-lg leading-relaxed max-w-md">
-                Whether you're seeking an intimate dinner, a lively group celebration, or a private event, our versatile spaces and menus are designed to create unforgettable Caribbean experiences.
+
+              <h2 className="font-just-another-hand text-6xl sm:text-7xl lg:text-[7rem] leading-[0.9] text-white tracking-tight m-0">
+                A Seat at<br />Our Table
+              </h2>
+
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '1rem', lineHeight: 1.85, color: 'rgba(255,255,255,0.7)', fontWeight: 300, margin: 0 }}>
+                Whether it's an intimate dinner in our dining room, a lively celebration with friends, or bringing our flavours safely to your own front door — we pour the exact same care into every plate.
               </p>
             </div>
 
-            {/* Right: Hero Image */}
-            <div className="relative aspect-[4/3] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src={diningHero}
-                alt="Dining Experience at Spiced Roots"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#27618E]/30 to-transparent"></div>
+            {/* Right: Large Image */}
+            <div style={{ position: 'relative' }}>
+              <div style={{ borderRadius: '4px', overflow: 'hidden', aspectRatio: '4/3', boxShadow: '0 32px 64px rgba(0,0,0,0.4)' }}>
+                <img
+                  src={diningHero}
+                  alt="Dining at Spiced Roots"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
             </div>
 
           </div>
 
-          {/* Service Options Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* 3 Solid Cards */}
+          <div className="dining-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
 
-            {/* Book Table Card */}
+            {/* Card 1: Reservations */}
             <div
               onClick={() => onNavigate('reservations')}
-              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              className="group cursor-pointer"
+              style={{ background: '#ffffff', padding: '48px 40px', borderRadius: '4px', display: 'flex', flexDirection: 'column', transition: 'transform 0.4s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              <div className="space-y-6">
-                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
-                  <Calendar className="w-8 h-8" />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Book Your Table</h3>
-                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
-                    Reserve your spot for an unforgettable dining experience. Perfect for intimate meals, large groups, and special events.
-                  </p>
-                </div>
-                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
-                  <span className="mr-2">RESERVE NOW</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '50%', background: '#1a2e3b', marginBottom: '32px', transition: 'all 0.4s ease' }} className="group-hover:bg-[#D1BB94]">
+                <Calendar style={{ width: '20px', height: '20px', color: '#F9F8F6' }} className="group-hover:text-[#1a2e3b] transition-colors duration-400" />
               </div>
+              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.5rem', fontWeight: 400, color: '#1a2e3b', margin: '0 0 16px', letterSpacing: '-0.01em' }}>Reservations</h3>
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '0.9375rem', lineHeight: 1.7, color: '#3a5068', fontWeight: 300, margin: '0 0 32px', flexGrow: 1 }}>
+                The full Spiced Roots experience. Secure your table in our dining room for an evening of authentic food and curated rums.
+              </p>
+              <button
+                className="px-8 py-4 bg-[#1a2e3b] text-[#F9F8F6] rounded-full text-[10px] tracking-[0.3em] font-black uppercase transition-all duration-500 shadow-md group-[&]:hover:bg-[#D1BB94] group-[&]:hover:text-[#1a2e3b] w-max mt-auto border border-transparent"
+                style={{ fontFamily: 'Arial, sans-serif' }}
+              >
+                BOOK A TABLE
+              </button>
             </div>
 
-            {/* Delivery Card */}
+            {/* Card 2: To-Go */}
             <div
-              onClick={() => onNavigate('order')}
-              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              onClick={() => window.open('https://spiced-roots-restaurant-oxford.nextorder.com/', '_blank')}
+              className="group cursor-pointer"
+              style={{ background: '#ffffff', padding: '48px 40px', borderRadius: '4px', display: 'flex', flexDirection: 'column', transition: 'transform 0.4s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              <div className="space-y-6">
-                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
-                  <ShoppingBag className="w-8 h-8" />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Delivery & Collection</h3>
-                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
-                    Enjoy our authentic Caribbean flavors at home. Fast delivery and convenient collection options available.
-                  </p>
-                </div>
-                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
-                  <span className="mr-2">ORDER NOW</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '50%', background: '#1a2e3b', marginBottom: '32px', transition: 'all 0.4s ease' }} className="group-hover:bg-[#D1BB94]">
+                <ShoppingBag style={{ width: '20px', height: '20px', color: '#F9F8F6' }} className="group-hover:text-[#1a2e3b] transition-colors duration-400" />
               </div>
+              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.5rem', fontWeight: 400, color: '#1a2e3b', margin: '0 0 16px', letterSpacing: '-0.01em' }}>To-Go</h3>
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '0.9375rem', lineHeight: 1.7, color: '#3a5068', fontWeight: 300, margin: '0 0 32px', flexGrow: 1 }}>
+                Uncompromising restaurant quality, boxed up for home. Stop by for collection or have it delivered fast to your door.
+              </p>
+              <button
+                className="px-8 py-4 bg-[#1a2e3b] text-[#F9F8F6] rounded-full text-[10px] tracking-[0.3em] font-black uppercase transition-all duration-500 shadow-md group-[&]:hover:bg-[#D1BB94] group-[&]:hover:text-[#1a2e3b] w-max mt-auto border border-transparent"
+                style={{ fontFamily: 'Arial, sans-serif' }}
+              >
+                ORDER NOW
+              </button>
             </div>
 
-            {/* Parties Card */}
+            {/* Card 3: Events */}
             <div
               onClick={() => onNavigate('catering')}
-              className="group relative bg-white p-6 lg:p-10 rounded-2xl cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 border border-[#27618E]/10 hover:border-[#27618E]/30"
+              className="group cursor-pointer"
+              style={{ background: '#ffffff', padding: '48px 40px', borderRadius: '4px', display: 'flex', flexDirection: 'column', transition: 'transform 0.4s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              <div className="space-y-6">
-                <div className="w-16 h-16 rounded-xl bg-[#27618E] flex items-center justify-center text-white">
-                  <Utensils className="w-8 h-8" />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl lg:text-3xl font-just-another-hand text-[#27618E] uppercase">Catering</h3>
-                  <p className="text-[#27618E]/60 text-sm leading-relaxed">
-                    Host your celebration with us. From birthdays to corporate events, we create memorable experiences.
-                  </p>
-                </div>
-                <div className="flex items-center text-[#27618E] font-semibold text-sm group-hover:translate-x-2 transition-transform">
-                  <span className="mr-2">LEARN MORE</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '50%', background: '#1a2e3b', marginBottom: '32px', transition: 'all 0.4s ease' }} className="group-hover:bg-[#D1BB94]">
+                <Utensils style={{ width: '20px', height: '20px', color: '#F9F8F6' }} className="group-hover:text-[#1a2e3b] transition-colors duration-400" />
               </div>
+              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.5rem', fontWeight: 400, color: '#1a2e3b', margin: '0 0 16px', letterSpacing: '-0.01em' }}>Private Events</h3>
+              <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '0.9375rem', lineHeight: 1.7, color: '#3a5068', fontWeight: 300, margin: '0 0 32px', flexGrow: 1 }}>
+                Bring the rhythm and flavour of Spiced Roots to your own celebration. Full catering for birthdays, weddings, and parties.
+              </p>
+              <button
+                className="px-8 py-4 bg-[#1a2e3b] text-[#F9F8F6] rounded-full text-[10px] tracking-[0.3em] font-black uppercase transition-all duration-500 shadow-md group-[&]:hover:bg-[#D1BB94] group-[&]:hover:text-[#1a2e3b] w-max mt-auto border border-transparent"
+                style={{ fontFamily: 'Arial, sans-serif' }}
+              >
+                ENQUIRE HERE
+              </button>
             </div>
 
           </div>
 
+          <style>{`
+            @media (max-width: 900px) {
+              .dining-split { grid-template-columns: 1fr !important; gap: 40px !important; margin-bottom: 48px !important; }
+              .dining-cards { grid-template-columns: 1fr !important; gap: 24px !important; }
+            }
+          `}</style>
         </div>
       </section>
 
-      {/* Redesigned Occasions Section - Full-Width Creative Layout */}
+      {/* ─── OCCASIONS GALLERY (Redesigned) ─────────────────────── */}
       <section
         ref={occasionsRef}
-        className="bg-[#fcfaf7] py-12 lg:py-24 overflow-hidden relative"
+        style={{ background: '#F9F8F6', padding: '120px 0', overflow: 'hidden', position: 'relative' }}
+        id="occasions-section"
       >
         <div className="max-w-[1600px] mx-auto px-6 sm:px-12">
 
           {/* Section Title */}
-          <div className={`text-center mb-12 lg:mb-16 transition-all duration-[1.2s] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-6xl lg:text-9xl font-just-another-hand text-[#27618E] leading-none tracking-tight mb-4">
-              Perfect for Any Occasion
+          <div className={`text-center mb-16 lg:mb-24 transition-all duration-[1.2s] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="font-just-another-hand text-6xl sm:text-7xl lg:text-[7rem] leading-[0.9] text-[#1a2e3b] tracking-tight mb-6">
+              The Atmosphere
             </h2>
-            <p className="text-[#27618E]/70 text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto">
-              From intimate dinners to grand celebrations, our vibrant Caribbean soul offers a sophisticated backdrop for every story.
+            <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '1.125rem', lineHeight: 1.85, color: '#3a5068', fontWeight: 300, margin: '0 auto', maxWidth: '42rem' }}>
+              Whether you're escaping for a quiet date night, gathering the family for a Sunday feast, or hosting a celebration that spills into the early hours, Spiced Roots is the perfect backdrop.
             </p>
           </div>
 
-          {/* Symmetric Grid Layout - 20 Images (High Density Wall) */}
+          {/* Grid Layout - Larger, Elegant Proportions */}
           {(() => {
             const allImages = [
               { src: occasion1, alt: "Atmospheric Dining" },
@@ -456,39 +456,40 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             ];
             return (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4 lg:gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                   {allImages.map((img, index) => (
                     <div
                       key={index}
-                      className={`group aspect-square rounded-xl overflow-hidden shadow-md transition-all duration-[1.2s]
+                      className={`group overflow-hidden transition-all duration-[1.2s]
                         ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}
-                        ${index >= 8 ? 'hidden md:block' : ''}
-                        ${index >= 8 && showAllOccasions ? '!block' : ''}
+                        ${index >= 6 ? 'hidden md:block' : ''}
+                        ${index >= 6 && showAllOccasions ? '!block' : ''}
                       `}
-                      style={{ animationDelay: `${index * 0.05}s` }}
+                      style={{ borderRadius: '4px', animationDelay: `${index * 0.05}s`, aspectRatio: '4/5', position: 'relative' }}
                     >
                       <img
                         src={img.src}
                         alt={img.alt}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-dark-green/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                      <div className="absolute inset-0 bg-[#1a2e3b]/0 group-hover:bg-[#1a2e3b]/10 transition-colors duration-500"></div>
                     </div>
                   ))}
                 </div>
 
                 {/* Show More / Show Less — mobile only */}
-                <div className="flex justify-center mt-8 md:hidden">
+                <div className="flex justify-center mt-12 md:hidden">
                   <button
                     onClick={() => setShowAllOccasions(prev => !prev)}
-                    className="group flex items-center gap-3 px-8 py-3 rounded-full border-2 border-[#27618E] text-[#27618E] text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:bg-[#27618E] hover:text-white"
+                    className="px-8 py-4 bg-[#1a2e3b] text-[#F9F8F6] rounded-full text-[10px] tracking-[0.3em] font-black uppercase transition-all duration-300 shadow-md flex items-center justify-center gap-3 w-max mx-auto border border-transparent"
+                    style={{ fontFamily: 'Arial, sans-serif' }}
                   >
                     {showAllOccasions ? (
-                      <>Show Less <span className="text-lg leading-none transition-transform duration-300 rotate-180">↑</span></>
+                      <>SHOW LESS <span className="text-sm leading-none transition-transform duration-300 rotate-180">↑</span></>
                     ) : (
-                      <>Show More <span className="text-lg leading-none transition-transform duration-300">↓</span></>
+                      <>VIEW MORE <span className="text-sm leading-none transition-transform duration-300">↓</span></>
                     )}
                   </button>
                 </div>
@@ -497,75 +498,102 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           })()}
 
         </div>
+        <style>{`
+          @media (max-width: 900px) {
+            #occasions-section { padding: 64px 0 !important; }
+            #occasions-section > div { padding: 0 24px !important; }
+          }
+        `}</style>
       </section>
 
-      {/* Reviews Sector - REVERTED TO TWO-COLUMN DESIGN */}
-      <section ref={reviewsRef} className="flex flex-col lg:flex-row min-h-[80vh]">
-        <div className="w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000"
-            alt="Cheesecake dessert"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-          />
-        </div>
-        <div className="w-full lg:w-1/2 bg-dark-green p-8 lg:p-24 flex flex-col justify-center items-center text-center relative overflow-hidden">
-          <span className="text-accent-pink text-4xl mb-6">✦</span>
-          <h2 className="text-7xl sm:text-9xl font-just-another-hand uppercase font-normal leading-none tracking-tight mb-16">
-            REVIEWS
+      {/* ─── GUESTBOOK / REVIEWS (Redesigned Editorial) ─────────────────────── */}
+      <section ref={reviewsRef} style={{ display: 'flex', minHeight: '80vh', background: '#1a2e3b' }} className="flex-col lg:flex-row">
+
+        {/* Left side: Content */}
+        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center">
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ height: '1px', width: '48px', background: '#D1BB94' }} />
+            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '10px', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#D1BB94', fontWeight: 700 }}>
+              Reviews
+            </span>
+          </div>
+
+          <h2 className="font-just-another-hand text-6xl sm:text-7xl lg:text-[7rem] leading-[0.9] text-white tracking-tight mb-16">
+            Words from<br />Our Guests
           </h2>
 
-          <div className="relative w-full max-w-lg min-h-[350px] flex flex-col justify-center">
+          <div className="relative w-full max-w-xl flex flex-col justify-center min-h-[250px]">
             {/* Review Content */}
-            <div className={`space-y-8 transition-all duration-300 ${reviewFade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="flex justify-center space-x-1 mb-4">
-                {[...Array(currentReview.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-accent-pink fill-accent-pink" />
+            <div className={`transition-all duration-500 ${reviewFade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <div style={{ display: 'flex', gap: '4px', marginBottom: '32px' }}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} style={{ width: '20px', height: '20px', color: '#D1BB94', fill: '#D1BB94' }} />
                 ))}
               </div>
-              <p className="serif italic text-3xl text-[#27618E] leading-tight">"{currentReview.title}"</p>
-              <p className="text-xl font-light text-[#27618E]/80 leading-relaxed italic">
-                {currentReview.content}
+
+              <p style={{ fontFamily: 'Georgia, serif', fontSize: '1.75rem', lineHeight: 1.5, color: '#F9F8F6', fontStyle: 'italic', marginBottom: '32px' }}>
+                "{[
+                  "The most authentic Caribbean food outside of the islands. Every single dish is packed with soul and perfectly balanced spice. Incredible.",
+                  "A masterclass in flavour. The 14-hour smoked jerk is unmatched, and the rum pairings recommended by the staff were absolutely perfect.",
+                  "Stunning atmosphere and even better food. You can immediately taste the heritage and love they pour into the kitchen."
+                ][currentReviewIndex % 3]}"
               </p>
-              <div className="flex flex-col items-center pt-4">
-                <span className="text-sm font-bold tracking-[0.3em] uppercase">{currentReview.author}</span>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '0.875rem', letterSpacing: '0.25em', textTransform: 'uppercase', fontWeight: 700, color: '#D1BB94' }}>
+                  — {[
+                    "Michael S.",
+                    "Sarah V.",
+                    "Daniel H."
+                  ][currentReviewIndex % 3]}
+                </span>
+                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  Google Reviews
+                </span>
               </div>
             </div>
 
-            {/* Navigation Arrows */}
-            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-0 pointer-events-none">
+            {/* Navigation Controls */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginTop: '48px' }}>
               <button
-                onClick={prevReview}
-                className="pointer-events-auto p-3 rounded-full border border-white/10 text-white/40 hover:text-accent-pink hover:border-accent-pink hover:scale-110 transition-all duration-300 bg-dark-green/50 backdrop-blur-sm -ml-4 lg:-ml-12"
-                aria-label="Previous Review"
+                onClick={() => {
+                  setReviewFade(false);
+                  setTimeout(() => {
+                    setCurrentReviewIndex(prev => (prev === 0 ? 2 : prev - 1));
+                    setReviewFade(true);
+                  }, 300);
+                }}
+                className="group p-4 rounded-full border border-white/20 hover:border-[#D1BB94] transition-colors duration-300"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft style={{ width: '24px', height: '24px', color: '#F9F8F6' }} className="group-hover:text-[#D1BB94] transition-colors" />
               </button>
+
               <button
-                onClick={nextReview}
-                className="pointer-events-auto p-3 rounded-full border border-white/10 text-white/40 hover:text-accent-pink hover:border-accent-pink hover:scale-110 transition-all duration-300 bg-dark-green/50 backdrop-blur-sm -mr-4 lg:-mr-12"
-                aria-label="Next Review"
+                onClick={() => {
+                  setReviewFade(false);
+                  setTimeout(() => {
+                    setCurrentReviewIndex(prev => (prev === 2 ? 0 : prev + 1));
+                    setReviewFade(true);
+                  }, 300);
+                }}
+                className="group p-4 rounded-full border border-white/20 hover:border-[#D1BB94] transition-colors duration-300"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight style={{ width: '24px', height: '24px', color: '#F9F8F6' }} className="group-hover:text-[#D1BB94] transition-colors" />
               </button>
             </div>
 
-            {/* Progress Dots */}
-            <div className="flex justify-center space-x-2 mt-12">
-              {REVIEWS.slice(0, 5).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setReviewFade(false);
-                    setTimeout(() => {
-                      setCurrentReviewIndex(i);
-                      setReviewFade(true);
-                    }, 300);
-                  }}
-                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === currentReviewIndex ? 'bg-accent-pink w-6' : 'bg-white/20 hover:bg-white/40'}`}
-                />
-              ))}
-            </div>
           </div>
+        </div>
+
+        {/* Right side: Image */}
+        <div className="w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden relative">
+          <img
+            src={occasion8}
+            alt="Spiced Roots Signature Dish"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#1a2e3b]/20"></div>
         </div>
       </section>
 

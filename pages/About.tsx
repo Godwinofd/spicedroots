@@ -1,174 +1,367 @@
 
 import React from 'react';
-import { ArrowRight, Utensils, Heart, Users } from 'lucide-react';
-import backgroundVideo from '../assets/PHOTOBOARD.mp4';
-import heritageArt from '../assets/DSC08044.jpg?format=webp&w=1200';
-import heritageStaff from '../assets/DSC08392.jpg?format=webp&w=1200';
-import heritageFamily from '../assets/DSC08040.jpg?format=webp&w=1200';
-import heritageHero from '../assets/DSC08713.jpg?format=webp&w=1600';
+import heritageHero from '../assets/DSC08713.jpg';
 
 const About: React.FC = () => {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // Much slower for extreme luxury feel
-    }
-  }, []);
-
   return (
-    <div className="bg-[#F9F8F6] text-[#27618E] overflow-x-hidden pt-20">
+    <div className="about-page">
 
-      {/* ─── HERO SECTION ─────────────────────────────────── */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* ─── HERO ─────────────────────────────────────── */}
+      <section className="about-hero">
+        <div className="about-hero__image-wrap">
           <img
             src={heritageHero}
-            alt="Spiced Roots Exterior"
-            className="w-full h-full object-cover object-center"
+            alt="Spiced Roots Oxford"
+            className="about-hero__image"
           />
-          {/* Tonal overlay for text contrast */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(15,40,60,0.6) 0%, rgba(15,40,60,0.4) 50%, rgba(15,40,60,0.7) 100%)' }} />
+          <div className="about-hero__overlay" />
         </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="flex items-center justify-center space-x-4 mb-8">
-            <div className="h-[1px] w-12 bg-[#D1BB94]"></div>
-            <span className="text-[#D1BB94] font-medium tracking-[0.4em] text-xs uppercase">Est. 2019 · Oxford</span>
-            <div className="h-[1px] w-12 bg-[#D1BB94]"></div>
-          </div>
-
-          <h1 className="leading-[0.85] uppercase">
-            <span className="block font-just-another-hand text-[18vw] sm:text-[12rem] animate-title-fade">Vibrant Soul,</span>
-            <span className="block font-serif italic font-bold text-[#D1BB94] text-[12vw] sm:text-[8rem] -mt-4 sm:-mt-8 lowercase tracking-tight animate-title-fade" style={{ animationDelay: '0.2s' }}>rooted</span>
-            <span className="block font-just-another-hand text-[18vw] sm:text-[12rem] -mt-4 sm:-mt-8 animate-title-fade" style={{ animationDelay: '0.4s' }}>In Tradition</span>
-          </h1>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-30">
-          <span className="text-[10px] tracking-widest uppercase font-bold">Scroll Story</span>
-          <div className="w-[1px] h-12 bg-[#27618E]"></div>
+        <div className="about-hero__content">
+          <p className="about-hero__eyebrow">Est. 2019 · Cowley Road, Oxford</p>
+          <h1 className="font-just-another-hand text-[7rem] sm:text-[10rem] lg:text-[13rem] leading-[0.85] mb-4">Our Story</h1>
+          <p className="about-hero__subtitle">
+            Rooted in the islands. Cooked with everything we've got.
+          </p>
         </div>
       </section>
 
-      {/* ─── CHAPTER 1: THE ENERGY ────────────────────────── */}
-      <section className="py-24 lg:py-40 px-6 sm:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7 lg:pr-12">
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-[#D1BB94]/10 rounded-[2rem] scale-95 group-hover:scale-100 transition-transform duration-1000"></div>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white">
-                  <img
-                    src={heritageStaff}
-                    alt="The Spiced Roots Team"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-5 space-y-8">
-              <div className="flex items-center space-x-3">
-                <Users className="w-5 h-5 text-[#D1BB94]" />
-                <span className="text-[#D1BB94] text-xs tracking-[0.3em] uppercase font-bold">01 · The Energy</span>
-              </div>
-              <blockquote className="text-3xl sm:text-4xl font-serif italic leading-relaxed text-[#27618E]/90">
-                "We don't just cook food; we share the rhythm of our islands and the warmth of Caribbean hospitality."
-              </blockquote>
-              <p className="text-lg font-light leading-relaxed text-[#27618E]/70 max-w-sm">
-                Our bar is the heart of Oxford's vibrant soul, where friendships are forged over the world's finest rums and house-made spirits.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CHAPTER 2: THE ROOTS ─────────────────────────── */}
-      <section className="py-24 lg:py-40 bg-[#27618E] text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2"></div>
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1 space-y-8">
-              <div className="flex items-center space-x-3">
-                <Utensils className="w-5 h-5 text-[#D1BB94]" />
-                <span className="text-[#D1BB94] text-xs tracking-[0.3em] uppercase font-bold">02 · The Roots</span>
-              </div>
-              <h2 className="font-just-another-hand text-7xl sm:text-8xl leading-none uppercase">Crafting <br /><span className="text-[#D1BB94] italic">Liquid History</span></h2>
-              <div className="space-y-6 text-white/70 text-lg font-light leading-relaxed max-w-md">
-                <p>
-                  Founded with a mission to elevate Caribbean cuisine in Oxford, Spiced Roots blends traditional jerk-pit methods with contemporary techniques.
-                </p>
-                <p>
-                  Every spice is toasted by hand, every curry slow-cooked for hours, and every cocktail crafted with the finest aged rums from across the archipelago.
-                </p>
-              </div>
-            </div>
-            <div className="lg:col-span-7 order-1 lg:order-2">
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] aspect-[16/10]">
-                <img
-                  src={heritageArt}
-                  alt="Traditional Caribbean Heritage"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CHAPTER 3: THE FAMILY ───────────────────────── */}
-      <section className="py-24 lg:py-48 bg-[#F9F8F6]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="flex flex-col items-center text-center mb-20 lg:mb-32">
-            <Heart className="w-8 h-8 text-[#D1BB94] mb-6" />
-            <span className="text-[#D1BB94] text-xs tracking-[0.5em] uppercase font-bold mb-4">03 · The Community</span>
-            <h2 className="font-just-another-hand text-6xl sm:text-[9rem] text-[#27618E] leading-none uppercase">
-              The Spiced Roots <span className="italic text-[#D1BB94]">Family</span>
+      {/* ─── INTRO EDITORIAL ──────────────────────────── */}
+      <section className="about-intro">
+        <div className="about-intro__inner">
+          <div className="about-intro__lead-col">
+            <span className="about-section-label">Who We Are</span>
+            <h2 className="font-just-another-hand text-6xl sm:text-7xl lg:text-[6.5rem] leading-[0.9] text-[#1a2e3b]">
+              Food is how we remember<br />where we come from.
             </h2>
           </div>
-
-          <div className="relative max-w-5xl mx-auto">
-            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white p-4 sm:p-6 border border-[#D1BB94]/20">
-              <div className="aspect-[16/9] rounded-[1.5rem] overflow-hidden">
-                <img
-                  src={heritageFamily}
-                  alt="The Family Board"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Floating Badge */}
-            <div className="absolute -bottom-10 -right-6 lg:-right-12 bg-[#27618E] text-white p-8 rounded-full w-40 h-40 flex flex-col items-center justify-center text-center shadow-xl rotate-12 transition-transform hover:rotate-0 duration-500">
-              <p className="font-just-another-hand text-4xl leading-none">Oxford's</p>
-              <p className="text-[10px] tracking-widest uppercase font-bold mt-1">Best Loved</p>
-            </div>
+          <div className="about-intro__body-col">
+            <p className="about-body-text">
+              Spiced Roots was born from a simple truth — that the best Caribbean food doesn't need to be dressed up, it just needs to be done properly. When we opened on Cowley Road in 2019, we weren't trying to reinvent anything. We were trying to do justice to the kitchens we grew up in: the slow-simmered pots, the smoky jerk pits, the curries that bubble away for half a day.
+            </p>
+            <p className="about-body-text">
+              Every recipe on our menu carries a memory. The oxtail comes from Sunday afternoons. The jerk is marinated the way it's always been — overnight, in green seasoning and scotch bonnet, then kissed by smoke. We don't cut corners here, because the people who taught us how to cook never did.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-32 flex flex-col items-center">
-            <p className="text-[#27618E]/40 text-xs tracking-[0.6em] uppercase font-black mb-12">End of Story</p>
-            <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-[#D1BB94] to-transparent"></div>
+      {/* ─── DIVIDER ──────────────────────────────────── */}
+      <div className="about-rule-wrap">
+        <span className="about-rule-label">Our Mission</span>
+        <div className="about-rule" />
+      </div>
+
+      {/* ─── THREE PILLARS ────────────────────────────── */}
+      <section className="about-pillars">
+        <div className="about-pillars__inner">
+
+          <article className="about-pillar">
+            <span className="about-pillar__num">01</span>
+            <h3 className="about-pillar__title">Craft &amp; Technique</h3>
+            <p className="about-pillar__text">
+              Meats marinated for 48 hours minimum. Curries slow-cooked in bone stock we make ourselves. Spice blends toasted fresh. None of it is glamorous — it's just the way it has to be done if you want it to taste right. That commitment is non-negotiable in our kitchen.
+            </p>
+          </article>
+
+          <article className="about-pillar">
+            <span className="about-pillar__num">02</span>
+            <h3 className="about-pillar__title">Culture &amp; Community</h3>
+            <p className="about-pillar__text">
+              We've always seen Spiced Roots as more than a place to eat. It's a yard — somewhere you come and feel at home. We host live music, sip &amp; paint nights, and celebrations of all kinds. Oxford welcomed us from day one, and that warmth gets poured back into everything we do.
+            </p>
+          </article>
+
+          <article className="about-pillar">
+            <span className="about-pillar__num">03</span>
+            <h3 className="about-pillar__title">Rum &amp; Good Company</h3>
+            <p className="about-pillar__text">
+              The bar is its own world. Over 50 Caribbean rums, handpicked from across the islands — Jamaica, Barbados, Trinidad, Guyana — poured properly and talked about with real knowledge. Our cocktails are built on island tradition. Come in for dinner and you might not leave until last orders.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      {/* ─── CLOSING STATEMENT ────────────────────────── */}
+      <section className="about-closing">
+        <div className="about-closing__inner">
+          <blockquote className="about-closing__quote">
+            "Come hungry. Bring people you love. We'll handle the rest."
+          </blockquote>
+          <p className="about-closing__attribution">— Spiced Roots Kitchen, Cowley Road</p>
+          <div className="about-closing__cta-row">
+            <a href="/menu" className="about-btn about-btn--primary">View Our Menu</a>
+            <a href="/reservations" className="about-btn about-btn--ghost">Make a Reservation</a>
           </div>
         </div>
       </section>
 
       <style>{`
-                @keyframes title-fade {
-                    from { opacity: 0; transform: translateY(40px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-title-fade {
-                    opacity: 0;
-                    animation: title-fade 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-            `}</style>
+        /* ── Base ── */
+        .about-page {
+          background: #F9F8F6;
+          color: #1a2e3b;
+          overflow-x: hidden;
+          padding-top: 80px;
+          font-family: 'Georgia', serif;
+        }
+
+        /* ── Hero ── */
+        .about-hero {
+          position: relative;
+          height: 88vh;
+          min-height: 560px;
+          display: flex;
+          align-items: flex-end;
+          overflow: hidden;
+        }
+        .about-hero__image-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        .about-hero__image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .about-hero__overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(10, 25, 38, 0.25) 0%,
+            rgba(10, 25, 38, 0.55) 60%,
+            rgba(10, 25, 38, 0.82) 100%
+          );
+        }
+        .about-hero__content {
+          position: relative;
+          z-index: 10;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 48px 72px;
+          color: #fff;
+        }
+        .about-hero__eyebrow {
+          font-family: 'Arial', sans-serif;
+          font-size: 11px;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: #D1BB94;
+          font-weight: 600;
+          margin-bottom: 16px;
+        }
+        .about-hero__title {
+          font-size: clamp(3.5rem, 9vw, 7rem);
+          font-weight: 400;
+          line-height: 1;
+          margin: 0 0 20px;
+          letter-spacing: -0.02em;
+        }
+        .about-hero__subtitle {
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          font-weight: 300;
+          color: rgba(255,255,255,0.75);
+          letter-spacing: 0.02em;
+          max-width: 400px;
+          margin: 0;
+          font-family: 'Arial', sans-serif;
+        }
+
+        /* ── Intro ── */
+        .about-intro {
+          padding: 100px 48px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .about-intro__inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: start;
+        }
+        .about-section-label {
+          display: block;
+          font-family: 'Arial', sans-serif;
+          font-size: 10px;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: #D1BB94;
+          font-weight: 700;
+          margin-bottom: 24px;
+        }
+        .about-intro__heading {
+          font-size: clamp(2rem, 4vw, 3.25rem);
+          font-weight: 400;
+          line-height: 1.15;
+          color: #1a2e3b;
+          margin: 0;
+          letter-spacing: -0.01em;
+        }
+        .about-intro__body-col {
+          padding-top: 48px;
+        }
+        .about-body-text {
+          font-family: 'Arial', sans-serif;
+          font-size: 1rem;
+          line-height: 1.85;
+          color: #3a5068;
+          margin: 0 0 24px;
+          font-weight: 300;
+        }
+        .about-body-text:last-child { margin-bottom: 0; }
+
+        /* ── Rule ── */
+        .about-rule-wrap {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 48px;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+        .about-rule-label {
+          font-family: 'Arial', sans-serif;
+          font-size: 10px;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: #D1BB94;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        .about-rule {
+          flex: 1;
+          height: 1px;
+          background: linear-gradient(to right, #D1BB94, transparent);
+        }
+
+        /* ── Pillars ── */
+        .about-pillars {
+          padding: 80px 48px 100px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .about-pillars__inner {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 64px;
+          margin-top: 56px;
+        }
+        .about-pillar {
+          border-top: 1px solid #D1BB94;
+          padding-top: 32px;
+        }
+        .about-pillar__num {
+          display: block;
+          font-family: 'Arial', sans-serif;
+          font-size: 10px;
+          letter-spacing: 0.3em;
+          color: #D1BB94;
+          font-weight: 700;
+          margin-bottom: 16px;
+        }
+        .about-pillar__title {
+          font-size: 1.375rem;
+          font-weight: 400;
+          color: #1a2e3b;
+          margin: 0 0 16px;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .about-pillar__text {
+          font-family: 'Arial', sans-serif;
+          font-size: 0.9375rem;
+          line-height: 1.8;
+          color: #3a5068;
+          font-weight: 300;
+          margin: 0;
+        }
+
+        /* ── Closing ── */
+        .about-closing {
+          background: #1a2e3b;
+          padding: 100px 48px;
+        }
+        .about-closing__inner {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .about-closing__quote {
+          font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+          font-weight: 400;
+          font-style: italic;
+          color: #fff;
+          line-height: 1.6;
+          margin: 0 0 24px;
+          letter-spacing: 0.01em;
+        }
+        .about-closing__attribution {
+          font-family: 'Arial', sans-serif;
+          font-size: 11px;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: #D1BB94;
+          font-weight: 600;
+          margin: 0 0 56px;
+        }
+        .about-closing__cta-row {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .about-btn {
+          display: inline-block;
+          padding: 14px 36px;
+          font-family: 'Arial', sans-serif;
+          font-size: 12px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-weight: 700;
+          text-decoration: none;
+          border-radius: 2px;
+          transition: all 0.25s ease;
+        }
+        .about-btn--primary {
+          background: #D1BB94;
+          color: #1a2e3b;
+        }
+        .about-btn--primary:hover {
+          background: #c4aa7d;
+        }
+        .about-btn--ghost {
+          border: 1px solid rgba(255,255,255,0.3);
+          color: #fff;
+        }
+        .about-btn--ghost:hover {
+          border-color: #D1BB94;
+          color: #D1BB94;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+          .about-intro__inner {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+          .about-intro__body-col { padding-top: 0; }
+          .about-pillars__inner {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+          .about-intro,
+          .about-pillars,
+          .about-closing {
+            padding-left: 24px;
+            padding-right: 24px;
+          }
+          .about-hero__content { padding: 0 24px 48px; }
+          .about-rule-wrap { padding: 0 24px; }
+        }
+      `}</style>
     </div>
   );
 };

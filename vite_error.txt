@@ -1,0 +1,20 @@
+[31mfailed to load config from C:\Users\20015\projects\spicedroots\vite.config.ts[39m
+[31merror when starting dev server:
+Error: Could not load the "sharp" module using the win32-arm64 runtime
+Possible solutions:
+- Manually install libvips >= 8.15.3
+- Add experimental WebAssembly-based dependencies:
+    npm install --cpu=wasm32 sharp
+    npm install @img/sharp-wasm32
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (C:\Users\20015\projects\spicedroots\node_modules\sharp\lib\sharp.js:113:9)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\20015\projects\spicedroots\node_modules\sharp\lib\constructor.js:10:1)[39m

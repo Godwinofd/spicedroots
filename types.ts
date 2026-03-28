@@ -4,7 +4,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number | string; // Some are deals like '2 for 6' or ranges
-  category: 'Starters' | 'Mains' | 'Sides' | 'Sweets' | 'Rum Bar' | 'Cocktails' | 'Lunch' | 'Deals' | 'Wine' | 'Soft Drinks';
+  category: 'Starters' | 'Mains' | 'Sides' | 'Sweets' | 'Rum Bar' | 'Cocktails' | 'Lunch' | 'Deals' | 'Wine' | 'Soft Drinks' | 'Beer';
   image?: string;
   isVegetarian?: boolean;
   isGlutenFree?: boolean;
